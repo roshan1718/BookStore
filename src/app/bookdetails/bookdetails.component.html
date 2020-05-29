@@ -1,0 +1,21 @@
+<div><p>Books [items]</p></div>
+    <!-- <mat-form-field >
+       <mat-label>Choose an option</mat-label>
+       <mat-select >
+         <mat-option value="option1">Option 1</mat-option>
+         <mat-option value="option2" >Option 2 </mat-option>
+         <mat-option value="option3">Option 3</mat-option>
+       </mat-select>
+    </mat-form-field></div> -->     
+<div class="products" *ngFor="let card of cards">
+    <mat-grid-list cols="2" rowHeight="2:3" >
+       <img mat-card-image class="img" [src]="card.img"  alt="">  
+       <mat-grid-tile>
+         <p>{{card.title}}</p>
+         <p>{{card.author}}</p>
+         <p>${{card.price}}</p>
+         <button mat-button class="btn1">Add to card</button>
+         <button mat-button class="btn2">WishList</button>
+    </mat-grid-tile>
+    </mat-grid-list>
+    </div>

@@ -1,0 +1,23 @@
+.btn1{
+    background-color: brown;
+    text-align: center;
+    width: fit-content;
+    color: white;
+  }
+  .btn2{
+    background-color: gainsboro;
+  }
+  .addbtn{
+    color: white;
+    border: none;
+    background: none;
+    margin-left:5px;
+  
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    padding-left :50px;
+    padding-top:  20px;
+  }
