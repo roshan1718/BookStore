@@ -1,0 +1,64 @@
+.my-cart {
+  margin-left: 40px;
+  border-radius: 5px black;
+  height: 100%;
+  width: 60%;
+  border-style: groove;
+  border-radius: black;
+  font: 15px Arial, sans-serif;
+}
+
+.cart-style {
+  margin-left: 40px;
+  display: flex;
+  position: relative;
+}
+.field-style {
+  display: flex;
+  position: relative;
+}
+.space {
+  padding-left: 40px;
+}
+.button {
+  padding-left: 400px;
+  color: white;
+  text-align: center;
+}
+.btn{
+    background-color:dodgerblue;
+    color: white;
+}
+.summary {
+    display: flex;
+    max-width: 60%;
+    margin-left: 40px;  
+    border-style: groove;
+    border-radius: black;
+    font: 15px Arial, sans-serif;
+  }
+.sum-btn{
+    background-color: dodgerblue;
+    max-height: 35px;
+    text-align: center;
+    margin-top: 30%;
+    margin-left: 40%;
+    color: white;
+}
+.sum-data{
+    margin-top: 30px;
+    margin-left: 40px;
+    flex-direction: column;
+}
+.sum-font-1{
+    display: flex;
+    font-size: 150%;
+}
+.sum-font-2{
+    font-size: 100%;
+}
+.sum-img{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}

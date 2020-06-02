@@ -1,0 +1,24 @@
+.main-style {
+  display: flex;
+  margin-top: 10%;
+  flex-direction: column;
+  font: 15px Arial, sans-serif;
+}
+.data-style {
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  text-align: center;
+}
+.msg-style{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+table,th,td { 
+    border: 1px solid black; 
+    border-collapse: collapse; 
+    padding: 20px;
+    width:  60%;
+} 
+  

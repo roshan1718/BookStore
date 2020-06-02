@@ -1,23 +1,21 @@
-.btn1{
-    background-color: brown;
-    text-align: center;
-    width: fit-content;
-    color: white;
-  }
-  .btn2{
-    background-color: gainsboro;
-  }
-  .addbtn{
-    color: white;
-    border: none;
-    background: none;
-    margin-left:5px;
-  
-  }
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-    padding-left :50px;
-    padding-top:  20px;
-  }
+.button-style1 {
+  background-color: brown;
+  color: white;
+   left: 1%;
+
+}
+.button-style2 {
+  left: 2%;
+
+}
+
+.title-style {
+  left: 5%;
+  font-weight: bold;
+}
+
+.box-style {
+  margin-left: 10px;
+  align-items: center;
+  background: whitesmoke;
+}

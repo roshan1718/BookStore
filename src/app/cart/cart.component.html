@@ -1,0 +1,97 @@
+<div>
+  <mat-card class="my-cart">
+    <p>My Cart</p>
+    <div class="cart-style">
+      <div>
+        <img
+          src="https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5"
+        />
+      </div>
+      <div class="space">
+        <p>DEMO</p>
+        <p>by TESTER</p>
+        <p>$$$$</p>
+        <span class="material-icons">
+          add_circle_outline
+        </span>
+        <span class="material-icons">
+          remove_circle_outline
+        </span>
+        <button mat-button>Remove</button>
+        <div class="button">
+          <button class="btn" mat-button>PLACE ORDER</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+<br />
+
+<mat-card class="my-cart">
+  <p>Customer Details</p>
+  <div style="height: 50%;">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone number</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Pincode</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Locality</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+    <input matInput placeholder="Placeholder" />
+  </mat-form-field>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>City/Town</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Landmark</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+  </div>
+  <label>Home</label><br /><br />
+  <div class="field-style">
+    <input type="radio" />
+    <label>Home</label> 
+    <input type="radio" />
+    <label>Work</label>
+    <input type="radio" />
+    <label>Other</label>
+    <div class="button">
+      <button class="btn" mat-button>Continue</button>
+    </div>
+  </div>
+</mat-card>
+<br />
+<div>
+  <mat-card class="summary">
+    <div class="sum-img">
+      <p>Order Summary</p>
+      <img
+        src="https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5"
+      />
+    </div>
+    <div class="sum-data">
+      <p class="sum-font-1">Landmark</p>
+      <p class="sum-font-2">by Landmark</p>
+      <p class="sum-font-1">Rs.1234</p>
+    </div>
+    <button mat-button class="sum-btn">CHECKOUT</button>
+  </mat-card>
+</div>

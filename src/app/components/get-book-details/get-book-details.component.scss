@@ -1,0 +1,42 @@
+.label-style {
+  display: flex;
+  justify-content: space-between;
+  font: 15px Arial, sans-serif;
+  
+}
+.selector-style {
+  margin-top: 14px;
+  height: 20px;
+}
+.name-size{
+  font-size: 20px;
+}
+ 
+.books-styles {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: initial;
+  text-align: center;
+}
+.pagination {
+  display: flex;
+  padding-left: 45%;
+  padding-right: 40%;
+
+}
+
+.pagination a {
+  color: brown;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: brown;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}

@@ -1,0 +1,31 @@
+<div>
+    <div>
+        <div class = "label-style">
+            <p class="name-size">Books [items]</p>
+            <div class = "selector-style">
+              <select >
+                <option>Select by relevence</option>
+                <option>Price:Low to High</option>
+                <option>Price:HIgh to Low</option>
+                <option >Newest Arrivals</option>
+              </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=books-styles>
+  <div *ngFor="let book of books">
+    <app-bookdetails [book]=book></app-bookdetails>
+    <br>
+  </div>
+</div>
+<div class="pagination">
+  <a href="#">&lt;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a> 
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&gt;</a>
+</div>
