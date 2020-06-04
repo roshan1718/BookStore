@@ -8,6 +8,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule  ({
     imports : [ MatToolbarModule,
@@ -18,7 +20,10 @@ import {MatRadioModule} from '@angular/material/radio';
                 MatSelectModule,
                 MatGridListModule,
                 MatSidenavModule,
-                MatRadioModule
+                MatRadioModule,
+                FormsModule,
+                ReactiveFormsModule,
+                MatBadgeModule
             ],
     exports : [  MatToolbarModule,
                 MatIconModule,
@@ -28,7 +33,10 @@ import {MatRadioModule} from '@angular/material/radio';
                 MatSelectModule,
                 MatGridListModule,
                 MatSidenavModule,
-                MatRadioModule
+                MatRadioModule,
+                FormsModule,
+                ReactiveFormsModule,
+                MatBadgeModule
             ]
 })
 
