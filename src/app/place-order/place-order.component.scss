@@ -22,3 +22,22 @@ table,th,td {
     width:  60%;
 } 
   
+.card-btn{
+  margin-top: 40px;
+  display: flex;
+  justify-content:space-around;
+}
+.btn-col{
+  color: white;
+  background-color: rgb(45, 125, 206);
+}
+.success-style{
+  width: 30%;
+ height: 40%;
+ 
+}
+.succ-img{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
