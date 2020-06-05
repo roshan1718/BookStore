@@ -1,0 +1,24 @@
+<div >
+  <div>
+    <div class="label-style">
+      <p>Books [items]</p>
+      <div class="selector-style">
+        <select class = "select-style">
+          <option>Sort by relevance</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest Arrivals</option>
+         
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+<div class = "books-styles">
+    <div  *ngFor="let book of books">
+      <app-bookcart [book]=book></app-bookcart>
+      <br>
+    </div>
+  </div>
+  

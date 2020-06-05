@@ -6,23 +6,40 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatBadgeModule} from '@angular/material/badge';
 
-@NgModule  ({ 
-    imports :[  MatToolbarModule, 
-                MatIconModule, 
-                MatInputModule, 
-                MatButtonModule,
-                MatCardModule,
-                MatSelectModule,
-                MatGridListModule
-            ],
-    exports :[  MatToolbarModule, 
-                MatIconModule, 
+@NgModule  ({
+    imports :[ MatToolbarModule,
+                MatIconModule,
                 MatInputModule,
                 MatButtonModule,
                 MatCardModule,
                 MatSelectModule,
-                MatGridListModule
+                MatGridListModule,
+                MatSidenavModule,
+                MatFormFieldModule,
+                FormsModule,
+                MatRadioModule,
+                ReactiveFormsModule,
+                MatBadgeModule
+            ],
+    exports :[ MatToolbarModule,
+                MatIconModule,
+                MatInputModule,
+                MatButtonModule,
+                MatCardModule,
+                MatSelectModule,
+                MatGridListModule,
+                MatSidenavModule,
+                MatFormFieldModule,
+                FormsModule,
+                MatRadioModule,
+                ReactiveFormsModule,
+                MatBadgeModule
             ]
 })
 
