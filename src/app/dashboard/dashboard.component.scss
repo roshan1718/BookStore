@@ -1,42 +1,46 @@
 .navbar {
-  width: 100%;
+  display: flex;
+  justify-content: space-around;
   background-color: brown;
   color: white;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 7%;
-  padding-right: 7%;
-  font: 15px Arial, sans-serif;  
+  font: 15px Arial, sans-serif;
 }
-
-.name-style{
-  font-size: 18px;
-
+.book-name {
+  font-size: 20px;
 }
-.span {
-  padding-right: 2rem;
+.searchbar {
+  margin-bottom: 40px;
+  width: 400px;
+  height: 20px;
+  color: black;
 }
-.Searchbar {
-  padding-left: 15px;
-  padding-top: 1px;
-  text-align: left;
-  width: 50%;
-  height: 40%;
+.search-style {
   background-color: white;
-  color: gray;
+  height: 30px;
+  border-radius: 4px;
+  padding-left: 2px;
+  font-family: FontAwesome !important;
 }
-
-.icon-size {
-  width: 10%;
+.icon {
+  background-color: white;
 }
-.addbtn {
+.shop-btn {
   color: white;
   border: none;
-  background: none;
+  background-color: brown;
   margin-left: 5px;
 }
 .sidenav {
   font: 15px Arial, sans-serif;
   padding-left: 7%;
   padding-right: 7%;
+}
+.side-style{
+  padding-left: 6%;
+  padding-right: 6%;
+  
+}
+.mat-badge-content {
+  background: white;
+  color: brown;
 }

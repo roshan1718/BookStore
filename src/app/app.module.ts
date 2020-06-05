@@ -5,20 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ImportModule } from 'src/import.module';
-import { BookdetailsComponent } from './bookdetails/bookdetails.component';
 import { GetBookDetailsComponent } from './components/get-book-details/get-book-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CartComponent } from './cart/cart.component';
-import { PlaceOrderComponent } from './place-order/place-order.component';
+import { CartComponent } from './components/cart/cart.component';
+import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import { BookcardComponent } from './components/bookcard/bookcard.component';
+import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    BookdetailsComponent,
     GetBookDetailsComponent,
     CartComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    BookcardComponent,
+    CustomerDetailsComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,

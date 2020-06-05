@@ -1,0 +1,32 @@
+.mat-card{
+    width: fit-content;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 100px;
+    font: 15px Arial, sans-serif;
+  }
+  .card-img{
+    max-height: 130px;
+  }
+  .card-data{
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  .card-btn{
+    margin-left: 400px;
+    color: white;
+    background-color: rgb(45, 125, 206);
+  }
+  
+  .cust-mat-card{
+    width: fit-content;
+    margin-top: 40px;
+    margin-left: 100px;
+    font: 15px Arial, sans-serif;
+  }
+  .cust-field{
+    margin-left: 10px;
+  }
+  .cust-add-field{
+    width: 415px;
+  }

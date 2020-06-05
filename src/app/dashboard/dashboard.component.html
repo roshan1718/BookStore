@@ -1,27 +1,30 @@
-<mat-toolbar class='navbar'>
-   <div class="name-style">
-      <p>
-         <mat-icon>menu_book</mat-icon> BookStore
-      </p>
-   </div>
-   <div class="Searchbar">
-      <mat-form-field>
-         <!-- //<mat-icon matPrefix>search</mat-icon> -->
-         <input matInput placeholder="search">
+<div >
+  <mat-toolbar class="navbar">
+    <div class="book-name">
+      <p><mat-icon>menu_book</mat-icon> BookStore</p>
+    </div>
+    <div>
+      <mat-form-field class="searchbar" appearance="none">
+         <input class="search-style" matInput placeholder= ' &#xF002; Search...'/>
       </mat-form-field>
    </div>
-   <div>
+    <div>
       <span>Cart</span>
-      <span><a routerLink="/cart"><button matBadge="1" matBadgeColor="white" class="addbtn">
-            <mat-icon>shopping_cart</mat-icon>
-         </button></a> </span>
-      <span></span>
-   </div>
-</mat-toolbar>
-<div class="sidenav">
+      <span
+        ><a routerLink="/cart"
+          ><button matBadge="1" matBadgeSize="small" class="shop-btn">
+            <mat-icon >shopping_cart</mat-icon>
+          </button></a
+        >
+      </span>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div class="side-style">
    <mat-sidenav-container>
       <mat-sidenav-content>
          <router-outlet></router-outlet>
       </mat-sidenav-content>
    </mat-sidenav-container>
-</div>
+</div> 

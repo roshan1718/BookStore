@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 
-/** Error when invalid control is dirty, touched. */
+// Error when invalid control is dirty, touched.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     return !!(control && control.invalid && (control.dirty || control.touched ));
@@ -10,24 +10,28 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  selector: 'app-customer-details',
+  templateUrl: './customer-details.component.html',
+  styleUrls: ['./customer-details.component.scss']
 })
-export class CartComponent {
+export class CustomerDetailsComponent implements OnInit {
+  @Input() form: any;
+   public isClicked: boolean;
   nameFormControl = new FormControl('', [
-    Validators.required,
-    Validators.maxLength(5),
+    Validators.required
   ]);
   numberFormControl = new FormControl('', [
     Validators.required,
     Validators.maxLength(10),
+    Validators.minLength(10)
   ]);
   AddressFormControl = new FormControl('', [
     Validators.required,
   ]);
   PincodeFormControl = new FormControl('', [
     Validators.required,
+    Validators.maxLength(6),
+    Validators.minLength(6)
   ]);
   LocalityFormControl = new FormControl('', [
     Validators.required,
@@ -39,4 +43,10 @@ export class CartComponent {
     Validators.required,
   ]);
   matcher = new MyErrorStateMatcher();
+  constructor() { }
+
+  ngOnInit(): void {
+     this.isClicked = false;
+  }
+
 }
