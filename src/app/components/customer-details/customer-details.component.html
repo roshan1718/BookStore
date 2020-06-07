@@ -8,6 +8,9 @@
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="nameFormControl.hasError('NAME_PATTERN')">
+            Name is invalid format
+          </mat-error>
           <mat-error *ngIf="nameFormControl.hasError('required')">
             Name is <strong>required</strong>
           </mat-error>
@@ -16,7 +19,7 @@
         <mat-form-field class="cust-field" appearance="outline">
           <mat-label>Phone number</mat-label>
           <input matInput [formControl]="numberFormControl" [errorStateMatcher]="matcher">
-          <mat-error *ngIf="numberFormControl.hasError('maxLength(10)')">
+          <mat-error *ngIf="numberFormControl.hasError(' MOBILE_PATTERN')">
             Please enter 10 digit number
           </mat-error>
           <mat-error *ngIf="numberFormControl.hasError('required')">
@@ -28,7 +31,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Pincode</mat-label>
           <input matInput [formControl]="PincodeFormControl" [errorStateMatcher]="matcher">
-          <mat-error *ngIf="PincodeFormControl.hasError('maxLength(6)')">
+          <mat-error *ngIf="PincodeFormControl.hasError('PINCODE_PATTERN')">
             Pincode is <strong>required</strong>
           </mat-error>
           <mat-error *ngIf="PincodeFormControl.hasError('required')">
@@ -48,15 +51,22 @@
         <mat-form-field class="cust-add-field" appearance="outline">
           <mat-label>Address</mat-label>
           <input matInput [formControl]="AddressFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="AddressFormControl.hasError('ADDRESS_PATTERN')">
+            Address is <strong>not</strong> valid
+          </mat-error>  
           <mat-error *ngIf="AddressFormControl.hasError('required')">
             Address is <strong>required</strong>
           </mat-error>
+
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline">
           <mat-label>City/Town</mat-label>
           <input matInput [formControl]="CityFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="CityFormControl.hasError('CITY_PATTERN')">
+            city name is must be valid..
+          </mat-error>
           <mat-error *ngIf="CityFormControl.hasError('required')">
             city name is <strong>required</strong>
           </mat-error>

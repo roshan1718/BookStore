@@ -10,7 +10,9 @@ import { PlaceOrderComponent } from './components/place-order/place-order.compon
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
-    children: [{path: '', component: GetBookDetailsComponent}
+    children: [{path: '', component: GetBookDetailsComponent},
+    {path: 'cart', component: CartComponent},
+    {path: 'success', component: PlaceOrderComponent}
     ]
   },
   {

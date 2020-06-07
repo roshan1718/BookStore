@@ -14,11 +14,11 @@ export class GetBookDetailsComponent implements OnInit {
       price: 193
     },
     {
-      author: 'Rujuta Divekar',
-      title: ' Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    },
+      author: 'Chetan Bhagat',
+        title: 'The Girl in Room 105',
+        img: 'https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5',
+       price: 193
+     },
     {
       author: 'Dan Brown',
       title: 'Angels And Demons',
@@ -26,11 +26,11 @@ export class GetBookDetailsComponent implements OnInit {
       price: 218
     },
     {
-      author: 'Rujuta Divekar',
-      title: 'Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    },
+      author: 'Chetan Bhagat',
+        title: 'The Girl in Room 105',
+        img: 'https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5',
+       price: 193
+     },
     {
       author: 'Dan Brown',
       title: 'Angels And Demons',
