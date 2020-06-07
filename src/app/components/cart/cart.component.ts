@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
 
   public isClicked: boolean;
+  public isButtonVisible = true;
   public amount: number;
 
   constructor() { }

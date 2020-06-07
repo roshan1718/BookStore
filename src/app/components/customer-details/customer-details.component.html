@@ -89,7 +89,9 @@
         <input type="radio" />
         <label>Other</label>
         <div class="button">
-          <button class="cust-btn" mat-button (click)="isClicked= true">CONTINUE</button>
+          <button class="cust-btn"*ngIf="this.isButtonVisible" 
+          mat-button (click)="isClicked= true"
+          (click)="this.isButtonVisible = false">CONTINUE</button>
         </div>
       </div>
     </div>

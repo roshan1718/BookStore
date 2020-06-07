@@ -19,7 +19,7 @@
 
       <button mat-button>Remove</button>
       <br />
-      <button class="card-btn" mat-button (click)="isClicked = true">
+      <button class="card-btn" *ngIf="this.isButtonVisible"mat-button (click)="isClicked = true" (click)="this.isButtonVisible = false">
         PLACE ORDER
       </button>
     </div>
