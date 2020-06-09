@@ -11,21 +11,18 @@
       <p>DEMO</p>
       <p>by TESTER</p>
       <p>$$$$</p>
-
       <div (click)="addToCart()">ADD</div>
-      <span><button class="btn-icon" (click)="removeItem()">-</button></span>
-      <span>{{ amount }}</span>
-      <span><button class="btn-icon" (click)="addItem()">+</button></span>
-
-      <button mat-button>Remove</button>
-      <br />
+      <span><mat-icon (click)="addItem()" >add_circle_outline</mat-icon></span>      
+      <span class="btn-icon">{{ amount }}</span>
+      <span><mat-icon class="btn-icon"(click)="removeItem()">remove_circle_outline</mat-icon></span>
+      <button (click)="deleteItem()" mat-button>Remove</button>
+      <br>
       <button class="card-btn" *ngIf="this.isButtonVisible"mat-button (click)="isClicked = true" (click)="this.isButtonVisible = false">
         PLACE ORDER
       </button>
     </div>
   </mat-card>
 </div>
-
 <br />
 <app-customer-details *ngIf="isClicked"></app-customer-details>
 <br />

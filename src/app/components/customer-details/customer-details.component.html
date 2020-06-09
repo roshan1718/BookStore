@@ -1,7 +1,6 @@
 <div>
-    <mat-card class="cust-mat-card">
-      
-      <div>
+  <mat-card class="cust-mat-card">  
+    <div>
       <p>Customer Details</p>
       
       <div>
@@ -80,14 +79,14 @@
           </mat-error>
         </mat-form-field>
       </div>
-      <label>Home</label><br /><br />
+      <label>Type</label><br /><br />
       <div>
-        <input type="radio" />
-        <label>Home</label> 
-        <input type="radio" />
-        <label>Work</label>
-        <input type="radio" />
-        <label>Other</label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button >Home</mat-radio-button>
+          <mat-radio-button class="radio-btn" value="2">Work</mat-radio-button>
+          <mat-radio-button class="radio-btn" value="3">Other</mat-radio-button>
+
+        </mat-radio-group>
         <div class="button">
           <button class="cust-btn"*ngIf="this.isButtonVisible" 
           mat-button (click)="isClicked= true"
@@ -95,6 +94,6 @@
         </div>
       </div>
     </div>
-    </mat-card>
-    </div>  
-    <app-order-summary *ngIf="isClicked"></app-order-summary>
+  </mat-card>
+</div>  
+<app-order-summary *ngIf="isClicked"></app-order-summary>

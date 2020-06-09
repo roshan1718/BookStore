@@ -12,6 +12,8 @@ import { PlaceOrderComponent } from './components/place-order/place-order.compon
 import { BookcardComponent } from './components/bookcard/bookcard.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     PlaceOrderComponent,
     BookcardComponent,
     CustomerDetailsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

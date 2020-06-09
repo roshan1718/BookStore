@@ -1,44 +1,44 @@
-.navbar {
+.toolbar-style {
   background-color: brown;
-  font: 15px Arial, sans-serif;
   color: white;
+  font: 15px Arial, sans-serif;
+  height: 10%;
 }
-.book-name {
+.bs-label{
+  font-size: 120%;
+}
+.bs-icon-style{
   margin-left: 9%;
-  font-size: 18px;
 }
-.searchbar {
-  margin-left: 9%;
-  width: 400px;
-  margin-top: 3%;
-  color: black;
+.srch-bar-position{
+  flex: 0 1 5%;
 }
-.search-style {
+.srch-bar-style {
   background-color: white;
   height: 30px;
   border-radius: 4px;
   font-family: FontAwesome !important;
+  width: 38%;
 }
-.icon {
-  background-color: white;
+.cart-position {
+  flex: 0.7 0 auto;
 }
-.shop-btn {
+.cart-icon-style {
   color: white;
   border: none;
   background-color: brown;
-  margin-left: 5px;
 }
-
-.side-style{
+.navbar-style{
   display: flex;
   justify-content: space-between;
   margin-right: 10%;
   margin-left: 10%;
 }
-.mat-badge-content {
-  background: white;
-  color: brown;
+.footer-style{
+  background-color: rgb(59, 31, 31);
+  color: white;
+  font: 15px Arial, sans-serif;
 }
-.card-style{
-  margin-left: 33%;
+.bs-footer-style{
+  margin-left: 9%;
 }

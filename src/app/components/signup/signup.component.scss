@@ -1,0 +1,39 @@
+.login-card {
+  margin: 0px 300px 20px 300px;
+  background-color: rgb(230, 235, 207);
+}
+.signup-name {
+  margin-top: 40px;
+  margin-left: 10px;
+}
+.header-image {
+  margin-left: initial;
+  background-color: rgb(182, 223, 223);
+  border-radius: 100%;
+}
+.container {
+  display: flex;
+  justify-content:space-between;
+  margin-top: 5%;
+  width: 100%;
+}
+.login-btn {
+  background-color: rgb(45, 125, 206);
+  color: white;
+  width: 150px;
+}
+.signup-btn {
+  background-color: rgb(45, 125, 206);
+  color: white;
+  width: 150px;
+}
+
+.filed-style {
+  width: 350px;
+}
+.link-style {
+  color: blue;
+}
+.radio-btn{
+  margin-left: 15px;
+}

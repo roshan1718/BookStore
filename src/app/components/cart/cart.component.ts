@@ -21,6 +21,10 @@ export class CartComponent implements OnInit {
     this.amount = 1;
   }
 
+  deleteItem(){
+    this.amount = this.amount * 0;
+  }
+
   addItem() {
     this.amount = this.amount + 1;
     // console.log('plus is : ' + this.amount );

@@ -1,0 +1,53 @@
+<div class="container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <div>
+        <img class="header-image" src="assets/user.png" />
+      </div>
+      <div>
+        <mat-card-title class="login-name">Login Form</mat-card-title>
+      </div>
+    </mat-card-header>
+    <br>
+    <div>
+      <mat-card-content>
+        <div>
+          <mat-form-field class="filed-style">
+            <mat-label>Username</mat-label>
+            <mat-icon matSuffix>person</mat-icon>
+            <input
+              matInput
+              [formControl]="nameFormControl"
+              [errorStateMatcher]="matcher"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="filed-style">
+            <mat-label> password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </div>
+    <mat-card-actions>
+      <div class="space-btn">
+        <button class="login-btn" mat-button>Login</button>
+        <a routerLink="/signup">
+          <button class="signup-btn" mat-button>Signup</button>
+        </a>
+      </div>
+      <br>
+      <p>forget
+      <a class="link-style"routerLink="/cart">Password</a></p>
+    </mat-card-actions>
+  </mat-card>
+</div>
