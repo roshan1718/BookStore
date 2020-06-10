@@ -1,26 +1,29 @@
-.label-style{
-display: flex;
-justify-content: space-between;
-
-}
-.selector-style{
-    margin-top: 14px;
-    width: 18%;
-
-}
-.select-style{
-width: 100%;
-}
-.books-styles{
-   
+.label-style {
     display: flex;
-    padding-left: 0.010%;
     justify-content: space-between;
-    //flex-flow: wrap;  
+    font: 15px Arial, sans-serif;
+  }
+  .book-name-style{
+    font-size: 22px;
+  }
+  .selector-style {
+    margin-top: 14px;
+    width: 15%;
+  }
+  .select-style {
+    width: 100%;
+  }
+  .books-styles {
+    display: flex;
+    margin-left:initial;
+    justify-content: space-between;
     flex-wrap: wrap;
-      
-}
-.side-style{
-padding: 20px 20px 20px 20px;
-}
-
+  }
+  
+  .card-bet-space{
+    padding-left: 5px;
+   
+    
+  }
+  
+  

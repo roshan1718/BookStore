@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule  ({
     imports :[ MatToolbarModule,
@@ -25,9 +26,10 @@ import {MatBadgeModule} from '@angular/material/badge';
                 FormsModule,
                 MatRadioModule,
                 ReactiveFormsModule,
-                MatBadgeModule
+                MatBadgeModule,
+                MatDividerModule
             ],
-    exports :[ MatToolbarModule,
+    exports : [ MatToolbarModule,
                 MatIconModule,
                 MatInputModule,
                 MatButtonModule,
@@ -39,7 +41,8 @@ import {MatBadgeModule} from '@angular/material/badge';
                 FormsModule,
                 MatRadioModule,
                 ReactiveFormsModule,
-                MatBadgeModule
+                MatBadgeModule,
+                MatDividerModule
             ]
 })
 

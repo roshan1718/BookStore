@@ -6,19 +6,19 @@
         <select class = "select-style">
           <option>Sort by relevance</option>
           <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
+          <option (click) = "sortByPriceAsc()">Price: High to Low</option>
           <option>Newest Arrivals</option>
-         
-        </select>
+         </select>
       </div>
     </div>
   </div>
 </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+<div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 <div class = "books-styles">
-    <div  *ngFor="let book of books">
-      <app-bookcart [book]=book></app-bookcart>
+    <div  class = "card-bet-space" *ngFor = "let book of bookArray">
+       <app-bookcart [book]=book></app-bookcart> 
       <br>
     </div>
   </div>
+</div>
   

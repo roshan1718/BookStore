@@ -16,7 +16,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 
 export class FormComponent implements OnInit {
-   @Input() form: any;
+  // @Input() form: any;
    public isClicked: boolean;
   nameFormControl = new FormControl('', [
     Validators.required

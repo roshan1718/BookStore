@@ -1,42 +1,41 @@
-.button-style1 {
-    background-color: brown;
-    color: white;
-    left: 1%;
-  }
-  .button-style2 {
-    left: 2%;
-  }
-  .green {
-    background-color: green;
-  }
-  
-  .title-style {
-    left: 5%;
-    font-weight: bold;
-    font-size: 90%;
-  margin-left: 10%;
-  }
-  
-  // .box-style {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   background: whitesmoke;
-  // }
-  .image-style{
-  width: 35%;
-  margin-left: 30%;
-  }
-  .img-style{
-  width:80%;
-  }
-  .author-style{
-    font-size: 47%;
-      margin-left: 10%;
-  
-  }
-  .price-style{
+
+
+
+
+
+.example-header-image {
+  width: 50%;
+  height: 150px;
+  margin-left: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.title-style {
+  font-weight: bold;
+  font-size: 90%;
+  line-height: 10px;
+}
+.author-style {
+  font-size: 47%;
+  margin-left: 2%;
+}
+.price-style {
   font-size: 75%;
-      margin-left: 10%;
-      font-weight: bold;
-  }
+  margin-left: 2%;
+  font-weight: bold;
+}
+.bs-img-bg {
+  background-color: rgb(241, 238, 238);
+}
+
+.button-style1 {
+   background-color: brown;
+   color: white;
+  
+ }
+ .button-style2 {
+  margin-left: 20px
+ }
+  .green {
+  background-color: green;
+ }

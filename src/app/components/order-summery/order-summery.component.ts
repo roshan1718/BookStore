@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./order-summery.component.scss']
 })
 export class OrderSummeryComponent implements OnInit {
-  @Input() form: any;
+ // @Input() form: any;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,36 +1,37 @@
-.navbar {
-  display: flex;
-  justify-content: space-around;
+.toolbar-style {
   background-color: brown;
   color: white;
   font: 15px Arial, sans-serif;
+  height: 10%;
 }
-.book-name {
-  font-size: 20px;
+.bs-label{
+  font-size: 120%;
 }
-.searchbar {
-  margin-bottom: 40px;
-  width: 400px;
-  height: 20px;
-  color: black;
+.bs-icon-style{
+  margin-left: 9%;
 }
-
-.search-style {
+.srch-bar-position{
+  flex: 0 1 5%;
+}
+.srch-bar-style {
   background-color: white;
   height: 30px;
   border-radius: 4px;
+  font-family: FontAwesome !important;
+  width: 38%;
 }
-.icon {
-  background-color: white;
+.cart-position {
+  flex: 0.7 0 auto;
 }
-.shop-btn {
+.cart-icon-style {
   color: white;
   border: none;
   background-color: brown;
-  margin-left: 5px;
 }
-.side-style{
-padding-left: 6%;
-padding-right: 6%;
-
+.navbar-style{
+  display: flex;
+  justify-content: space-between;
+  
+  margin-right: 10%;
+  margin-left: 10%;
 }

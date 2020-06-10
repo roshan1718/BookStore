@@ -37,7 +37,7 @@ import { BookcartComponent } from './components/bookcart/bookcart.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [BookcartComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

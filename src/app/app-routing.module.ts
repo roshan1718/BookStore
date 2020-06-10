@@ -6,20 +6,23 @@ import { CartComponent } from './components/cart/cart.component';
 import { FormComponent } from './components/form/form.component';
 import { OrderSummeryComponent } from './components/order-summery/order-summery.component';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import { BookcartComponent } from './components/bookcart/bookcart.component';
 
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
-    children: [{path: '', component: GetBookDetailsComponent}
+    children: [{path: '', component: GetBookDetailsComponent},
+    {path: 'cart', component: CartComponent},
+    {path: 'success', component: PlaceOrderComponent}
     ]
   },
+ // {
+  //  path: 'cart', component: CartComponent,
+    // children: [{path: 'cart', component: FormComponent,
+    // children: [{path: 'cart', component: OrderSummeryComponent}] }]
+  // },
   {
-    path: 'cart', component: CartComponent,
-    children: [{path: 'cart', component: FormComponent,
-    children: [{path: 'cart', component: OrderSummeryComponent}] }]
-  },
-  {
-    path: 'success', component: PlaceOrderComponent
+    path: 'book', component: BookcartComponent
   }
 ];
 

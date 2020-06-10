@@ -7,7 +7,8 @@ import { HttpService } from 'src/app/service/http.service';
   styleUrls: ['./get-book-details.component.scss']
 })
 export class GetBookDetailsComponent implements OnInit {
-  // books = [];
+  bookArray = [];
+
   books = [
     {
      author: 'Chetan Bhagat',
@@ -64,10 +65,22 @@ export class GetBookDetailsComponent implements OnInit {
   constructor(private httpservice: HttpService) { }
 
   ngOnInit(): void {
+    this.getBooks();
   }
 
   // To fetch all books
   public getBooks(){
-    this.httpservice.getBooks().subscribe(data => this.books = data);
+    this.httpservice.getBooks().subscribe(data => {
+      this.bookArray = data;
+      // console.log(this.bookArray);
+     } );
+   // console.log(this.bookArray);
+
+  }
+  public sortByPriceAsc(){
+    this.httpservice.sortByPriceAsc().subscribe(data => {
+      this.bookArray = data;
+      console.log(this.bookArray);
+     });
   }
 }
