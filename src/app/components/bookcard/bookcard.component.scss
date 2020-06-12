@@ -1,34 +1,69 @@
-.button-style1 {
-  background-color: brown;
-  color: white;
-  left: 1%;
-}
-.button-style2 {
-  left: 2%;
-}
-.green {
-  background-color: green;
+.image-style {
+  width: 40%;
+  height: 120px;
+  margin-left: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .title-style {
-  left: 5%;
   font-weight: bold;
   font-size: 90%;
-  margin-left: 10%;
-}
-.image-style {
-  width: 45%;
-  margin-left: 30%;
-}
-.img-style {
-  width: 80%;
-}
+  line-height: 16px;
+  white-space: nowrap; 
+  width: 180px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  }
+
 .author-style {
   font-size: 47%;
-  margin-left: 10%;
+  margin-left: 2%;
+  margin-top: -4%;
 }
 .price-style {
   font-size: 75%;
-  margin-left: 10%;
+  margin-left: 2%;
   font-weight: bold;
+  margin-top: -2%;
+}
+.bs-img-bg {
+  background-color: rgb(245, 247, 247);
+  margin: -0px -15px -8px -15px;
+  margin-top: -16px;
+}
+
+.button-style1 {
+   background-color: brown;
+   border: unset;
+   color: white;
+   height: 30px;
+  
+ }
+ .button-style2 {
+  margin-left: 15px;
+  height: 30px;
+ }
+  .green {
+  background-color: green;
+ }
+
+.tooltip-wrap {
+  position: relative;
+  background-color: rgb(245, 247, 247);
+  margin: -0px -15px -8px -15px;
+  margin-top: -16px;
+}
+.tooltip-wrap .tooltip-content {
+  display: none;
+  position: absolute;
+  bottom: -180%;
+  width: 550px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+
+}
+.tooltip-wrap:hover .tooltip-content {
+ display: block;
 }

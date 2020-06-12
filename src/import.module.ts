@@ -6,10 +6,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatRadioModule} from '@angular/material/radio';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule  ({
     imports : [ MatToolbarModule,
@@ -23,7 +25,8 @@ import {MatBadgeModule} from '@angular/material/badge';
                 MatRadioModule,
                 FormsModule,
                 ReactiveFormsModule,
-                MatBadgeModule
+                MatBadgeModule,
+                MatDividerModule
             ],
     exports : [  MatToolbarModule,
                 MatIconModule,
@@ -36,7 +39,8 @@ import {MatBadgeModule} from '@angular/material/badge';
                 MatRadioModule,
                 FormsModule,
                 ReactiveFormsModule,
-                MatBadgeModule
+                MatBadgeModule,
+                MatDividerModule
             ]
 })
 

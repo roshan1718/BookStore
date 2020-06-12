@@ -8,6 +8,7 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component'
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path: 'cart', component: CartComponent},
     {path: 'success', component: PlaceOrderComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'signup', component: SignupComponent}
+    {path: 'signup', component: SignupComponent},
+    {path: 'forget-password', component: ForgetPasswordComponent}
     ]
   },
   {
@@ -31,6 +33,9 @@ const routes: Routes = [
   },
   {
     path: 'signup', component: SignupComponent
+  },
+  {
+    path: 'forget-password', component: ForgetPasswordComponent
   }
 ];
 

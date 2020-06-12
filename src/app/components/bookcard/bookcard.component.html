@@ -1,14 +1,28 @@
 <div>
-    <mat-card>
-        <div class="image-style">
-            <img [src]="book.img" class="img-style">
+  <div>
+
+    <mat-card class="mat-card">
+      <div>
+        <div class="tooltip-wrap">
+          <img
+            class="image-style" [src]="book.img"/>
+          <mat-card class="tooltip-content">
+            <p class="title-style">Book Details</p>{{ book.description }}
+          </mat-card> 
         </div>
-        <mat-card-title class="title-style">{{book.title}}</mat-card-title>
-        <mat-card-title class="author-style">by {{book.author}}</mat-card-title>
-        <mat-card-title class="price-style">${{book.price}}</mat-card-title>
-        <button mat-button class="button-style1">ADD TO BAG</button>
-        <button mat-button (click)="colorChange()" [ngClass]="{'green': toggle}"
-            class="button-style2">WISHLIST</button>
+      </div>
+      <p class="title-style">{{ book.title }}</p>
+      <p class="author-style">by {{ book.author }}</p>
+      <p class="price-style">${{ book.price }}</p>
+      <button class="button-style1">ADD TO BAG</button>
+      <button
+        (click)="colorChange()"
+        [ngClass]="{ green: toggle }"
+        class="button-style2" >
+        WISHLIST
+      </button>
     </mat-card>
+  </div>
 </div>
+
 

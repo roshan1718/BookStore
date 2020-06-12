@@ -1,39 +1,53 @@
-.login-card {
-  margin: 0px 300px 20px 300px;
-  background-color: rgb(230, 235, 207);
+.card-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 880px;
+  margin: auto;
+  height: 500px;
+}
+.form-style {
+  background-color: #f6eaea;
+  height: 400px;
+  width: 380px;
+  margin-top: 10%;
+}
+.header-img-style {
+  border-radius: 100%;
+  width: 45%;
+  margin-left: 45%;
+  margin-top: -28%;
+  background-color: brown;
 }
 .signup-name {
-  margin-top: 40px;
-  margin-left: 10px;
+  margin-top: 63px;
+  margin-left: -111%;
 }
-.header-image {
-  margin-left: initial;
-  background-color: rgb(182, 223, 223);
-  border-radius: 100%;
+.field-style {
+  width: 370px;
 }
-.container {
-  display: flex;
-  justify-content:space-between;
-  margin-top: 5%;
-  width: 100%;
+.radio-btn {
+  margin-left: 15px;
+  color: brown;
 }
-.login-btn {
-  background-color: rgb(45, 125, 206);
-  color: white;
-  width: 150px;
-}
-.signup-btn {
-  background-color: rgb(45, 125, 206);
-  color: white;
-  width: 150px;
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  // opacity: 0.5 !important;     /click effect color change/
+  background-color: brown !important;
 }
 
-.filed-style {
-  width: 350px;
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: brown !important;
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: brown !important;
+}
+.signup-btn {
+  background-color: brown;
+  color: white;
+  width: 150px;
 }
 .link-style {
-  color: blue;
-}
-.radio-btn{
-  margin-left: 15px;
+  color: brown;
 }

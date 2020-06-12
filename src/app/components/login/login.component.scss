@@ -1,41 +1,48 @@
-.login-card {
-  margin: 0px 300px 40px 300px;
-  background-color: rgb(230, 235, 207);
+.card-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 880px;
+  margin: auto;
+  height: 500px;
+}
+.form-style {
+  background-color: #f6eaea;
+  height: 400px;
+  width: 380px;
+  margin-top: 10%;
+}
+.header-img-style {
+  border-radius: 100%;
+  width: 45%;
+  margin-left: 45%;
+  margin-top: -28%;
 }
 .login-name {
-  margin-top: 40px;
-  margin-left: 10px;
+  margin-top: 63px;
+  margin-left: -111%;
 }
-.header-image {
-  margin-left: initial;
-  background-color: rgb(182, 223, 223);
-  border-radius: 100%;
+.field-style {
+  width: 370px;
 }
-.container {
+.button-margin {
+  margin-left: 8px;
+  margin-right: 12px;
+}
+.button-style {
   display: flex;
-  justify-content:space-between;
-  margin-top: 5%;
-  width: 100%;
+  justify-content: space-between;
 }
 .login-btn {
-  background-color: rgb(45, 125, 206);
+  background-color: #a52a2a;
   color: white;
   width: 150px;
 }
 .signup-btn {
-  background-color: rgb(45, 125, 206);
+  background-color: #a52a2a;
   color: white;
   width: 150px;
 }
-
-.filed-style {
-  width: 350px;
-}
 .link-style {
-  color: blue;
-}
-
-.space-btn {
-  display: flex;
-  justify-content: space-between;
+  color: brown;
 }
