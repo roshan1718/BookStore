@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/service/http.service';
 
 @Component({
   selector: 'app-get-book-details',
@@ -6,50 +7,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./get-book-details.component.scss']
 })
 export class GetBookDetailsComponent implements OnInit {
-  books = [
-    {
-     author: 'Chetan Bhagat',
-       title: 'The Girl in Room 105',
-       img: 'https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5',
-      price: 193,
-      description : 'Im Keshav and my life is screwed. I hate my job and my girlfriend left me.the beautiful Zara. Zara is from Kashmir.She is a Muslim. And did I tell you my family is a bit welltraditional? Anyway leave that. Zara and I broke up four years ago. She moved on in life. I didnt. I drank every night to forget her. I calledIm Keshav and my life is screwed. I hate my job and my girlfriend left me.the beautiful Zara. Zara is from Kashmir.She is a Muslim. And did I tell you my family is a bit welltraditional? Anyway leave that. Zara and I broke up four years ago. She moved on in life. I didnt. I drank every night to forget her. I calledIm Keshav and my life is screwed. I hate my job and my girlfriend left me.the beautiful Zara. Zara is from Kashmir.She is a Muslim. And did I tell you my family is a bit welltraditional? Anyway leave that. Zara and I broke up four years ago. She moved on in life. I didnt. I drank every night to forget her. I calledIm Keshav and my life is screwed. I hate my job and my girlfriend left me.the beautiful Zara. Zara is from Kashmir.She is a Muslim. And did I tell you my family is a bit welltraditional? Anyway leave that. Zara and I broke up four years ago. She moved on in life. I didnt. I drank every night to forget her. I calledIm Keshav and my life is screwed. I hate my job and my girlfriend left me.the beautiful Zara. Zara is from Kashmir.She is a Muslim. And did I tell you my family is a bit welltraditional? Anyway leave that. Zara and I broke up four years ago. She moved on in life. I didnt. I drank every night to forget her. I called'
+  bookArray = [];
+  image: string;
 
-    },
-    {
-      author: 'Chetan Bhagat',
-        title: 'The Girl in Room 105',
-        img: 'https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5',
-       price: 193,
-       description : 'Im Keshav and my life is screwed. I hate my job and my girlfriend left me.the beautiful Zara. Zara is from Kashmir.She is a Muslim. And did I tell you my family is a bit welltraditional? Anyway leave that. Zara and I broke up four years ago. She moved on in life. I didnt. I drank every night to forget her. I called'
-     },
-    {
-      author: 'Dan Brown',
-      title: 'Angels And Demons',
-      img: 'http://books.google.com/books/content?id=d5xgYw4Ts0gC&printsec=frontcover&img=1&zoom=5',
-      price: 218
-    },
-    {
-      author: 'Chetan Bhagat',
-        title: 'The Girl in Room 105',
-        img: 'https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5',
-       price: 193
-     },
-    {
-      author: 'Dan Brown',
-      title: 'Angels And Demons',
-      img: 'http://books.google.com/books/content?id=d5xgYw4Ts0gC&printsec=frontcover&img=1&zoom=5',
-      price: 218
-    },
-    {
-      author: 'Dan Brown',
-      title: 'Angels And Demons',
-      img: 'http://books.google.com/books/content?id=d5xgYw4Ts0gC&printsec=frontcover&img=1&zoom=5',
-      price: 218
+  constructor(private httpservice: HttpService) { }
+
+    ngOnInit(): void {
+      this.getBooks();
+      this.sortByPriceAsc();
+      // this.sortByPriceDesc();
+      // this.sortByNewArrival();
     }
-  ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+    // To fetch all books
+    public getBooks(){
+      this.httpservice.getBooks().subscribe(data => {
+        this.bookArray = data;
+       } );
+    }
+    public sortByPriceAsc(){
+      this.httpservice.sortByPriceAsc().subscribe(data => {
+        this.bookArray = data;
+        console.log(this.bookArray);
+       });
+    }
+  public sortByPriceDesc(){
+      this.httpservice.sortByPriceDesc().subscribe(data => {
+        this.bookArray = data;
+        console.log(this.bookArray);
+       });
+    }
+    public sortByNewArrival(){
+      this.httpservice.sortByNewArrival().subscribe(data => {
+        this.bookArray = data;
+        console.log(this.bookArray);
+       });
+    }
 }

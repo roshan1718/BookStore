@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { AddToBagService } from '../service/add-to-bag.service';
 
 
 @Component({
@@ -7,10 +8,13 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
-
+ count = 0;
+  constructor(public addToBagService: AddToBagService) { }
   ngOnInit(): void {
+    this.addToBagService.count.subscribe(counts => {
+      this.count = counts;
+    });
+    this.count = this.count[0]; // By Default 0
+   // console.log(this.count);
   }
-  
 }

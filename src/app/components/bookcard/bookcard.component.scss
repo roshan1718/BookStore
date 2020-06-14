@@ -1,3 +1,9 @@
+.mat-card{
+  transition: none !important;
+  box-shadow: none !important;
+  border: rgb(184, 184, 184) 1px  solid; 
+}
+
 .image-style {
   width: 40%;
   height: 120px;
@@ -33,15 +39,15 @@
   margin-top: -16px;
 }
 
-.button-style1 {
+.addtobag-btn {
    background-color: brown;
    border: unset;
    color: white;
    height: 30px;
   
  }
- .button-style2 {
-  margin-left: 15px;
+ .wishlist-btn {
+  margin-left: 21px;
   height: 30px;
  }
   .green {
@@ -49,7 +55,7 @@
  }
 
 .tooltip-wrap {
-  position: relative;
+
   background-color: rgb(245, 247, 247);
   margin: -0px -15px -8px -15px;
   margin-top: -16px;
@@ -57,7 +63,7 @@
 .tooltip-wrap .tooltip-content {
   display: none;
   position: absolute;
-  bottom: -180%;
+  bottom: -64%;
   width: 550px;
   left: 0;
   right: 0;

@@ -1,30 +1,26 @@
-<div>
-  <div>
-    <div class="label-style">
-      <p class="book-name-style">Books (items)</p>
-      <div class="selector-style">
-        <select class="select-style">
-          <option>Sort by relevance</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
-          <option>Newest Arrivals</option>
-        </select>
-      </div>
-    </div>
+<div class="label-style">
+  <p class="book-name-style">Books (items)</p>
+  <div class="selector-style">
+    <select class="select-style">
+      <option>Sort by relevance</option>
+      <option onchange="this.sortByPriceAsc()">Price: Low to High</option>
+      <option>Price: High to Low</option>
+      <option>Newest Arrivals</option>
+    </select>
   </div>
 </div>
 
 <div class="books-styles">
-  <div class="card-bet-space"*ngFor="let book of books">
+  <div class="card-bet-space" *ngFor="let book of bookArray">
     <app-bookcard [book]="book"></app-bookcard>
-    <br>
+    <br />
   </div>
 </div>
 <div class="pagination">
   <a href="#">&lt;</a>
   <a href="#">1</a>
   <a class="active" href="#">2</a>
-  <a href="#">3</a> 
+  <a href="#">3</a>
   <a href="#">4</a>
   <a href="#">5</a>
   <a href="#">6</a>

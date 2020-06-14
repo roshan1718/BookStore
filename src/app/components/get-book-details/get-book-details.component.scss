@@ -6,11 +6,12 @@
 }
 .book-name-style{
   font-size: 22px;
+  margin-left: 1%;
 }
 .selector-style {
-  margin-top: 2%;
+  margin-top: 30px;
   margin-right: 3%;
-  width: 15%;
+  width: 13%;
 }
 .select-style {
   width: 100%;
@@ -32,21 +33,17 @@
   padding-left: 30%;
   padding-right: 40%;
   padding-bottom: 2%;
-
 }
-
 .pagination a {
   color: brown;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
 }
-
 .pagination a.active {
   background-color: brown;
   color: white;
 }
-
 .pagination a:hover:not(.active) {
   background-color: #ddd;
 }

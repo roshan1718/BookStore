@@ -1,9 +1,13 @@
 
 .cust-mat-card{
     width: 650px;
-    margin-top: 40px;
+    
     margin-left: 10px;
     font: 15px Arial, sans-serif;
+    border: rgb(184, 184, 184) 1px  solid; 
+    transition: none !important;
+    box-shadow: none !important;
+
   }
 
 .cust-field{

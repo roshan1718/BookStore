@@ -7,14 +7,14 @@
     <span class="cart-position"></span>
     <span>Cart</span>
     <a routerLink="/cart">
-      <button
-        matBadge="1"
-        matBadgeSize="small"
-        matBadgeColor="warn"
-        class="cart-icon-style"
-      >
-        <mat-icon>shopping_cart</mat-icon>
-      </button>
+      <mat-icon matBadge={{count}} matBadgeSize="small" class="cart-icon-style">
+      shopping_cart</mat-icon>
+    </a>
+    <span class="wish-space"></span>
+    <span >WishList</span>
+    <a routerLink="/wishlist">
+      <mat-icon matBadge="1"matBadgeSize="small" matBadgeColor="warn"class="cart-icon-style">
+        favorite_border</mat-icon>
     </a>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -27,11 +27,9 @@
 </div>
 <!-- footer -->
 <footer class="footer-style">
-  <br />
   <div class="bs-footer-style">
     <p>
       Copyright @ 2020, Bookstore Private Limited. All Rights Reserved
     </p>
-    <br />
   </div>
 </footer>
