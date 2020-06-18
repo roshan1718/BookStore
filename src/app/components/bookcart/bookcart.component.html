@@ -11,7 +11,8 @@
             <p class="author-style">by {{book.author}}</p>
             <p class="price-style">${{book.price}}</p>
             <button (click)="incrementBagCnt(); addToCart()" class="button-style1" disabled={{isDisabled}}>ADD TO BAG</button>
-            <button (click)="buttonColorChange(); incrementBagCnt()" [ngClass]="{'green': toggle}" class="button-style2">WISHLIST</button>
+            <button (click)="buttonColorChange(); incrementBagCnt(); addToWishlist()" [ngClass]="{'green': toggle}" class="button-style2">WISHLIST</button>
+       
         </mat-card>
     </div>
 </div>

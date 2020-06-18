@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({

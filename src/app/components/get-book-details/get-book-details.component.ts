@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HttpService } from 'src/app/service/http.service';
   templateUrl: './get-book-details.component.html',
   styleUrls: ['./get-book-details.component.scss']
 })
-export class GetBookDetailsComponent implements OnInit {
+export class GetBookDetailsComponent implements OnInit{
   bookArray = [];
   image: string;
   p: number = 1;
@@ -14,11 +14,7 @@ export class GetBookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBooks();
-   // this.sortByPriceAsc();
-   // this.sortByPriceDesc();
-   // this.sortByNewArrival();
   }
-
   // To fetch all books
   public getBooks(){
     this.httpservice.getBooks().subscribe(data => {

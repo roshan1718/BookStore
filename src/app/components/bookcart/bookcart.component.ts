@@ -3,6 +3,7 @@ import { AddToBagService } from 'src/app/service/add-to-bag.service';
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { HttpService } from 'src/app/service/http.service';
 import { Cart } from 'src/app/model/cart';
+import { Wishlist } from 'src/app/model/wishlist';
 
 @Component({
   selector: 'app-bookcart',
@@ -43,10 +44,17 @@ result: string;
     this.isDisabled = true;
   }
   addToCart(){
-     var cartObj = new Cart(this.userId, this.book.id, this.bookQuantity);
+    var cartObj = new Cart(this.userId, this.book.id, 1);
     this.httpService.addToCart(cartObj).subscribe(data => {
     });
     console.log('Book added to cart');
     console.log(cartObj);
   } 
+  addToWishlist(){
+    var wishlistObj = new Wishlist(this.userId, this.book.id);
+    this.httpService.addToWishlist(wishlistObj).subscribe(data => {
+    });
+    console.log('Book added to wishlist');
+    console.log(wishlistObj);
+  }
 }
