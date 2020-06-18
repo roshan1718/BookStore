@@ -1,20 +1,22 @@
 <div>
   <mat-card class="mat-card">
-    <div>
-      <p>My Cart (1)</p>
+
+    <p>My Cart (1)</p>
+    <div *ngFor="let cartBooks of books">
       <img class="card-img"
         src="https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5" />
-    </div>
-    <div class="card-data">
-      <p>DEMO</p>
-      <p>by TESTER</p>
-      <p>$$$$</p>
-      <div (click)="addToCart()">ADD</div>
-      <span><button class="btn-icon" (click)="removeItem()">-</button></span>
-      <span>{{ amount }}</span>
-      <span><button class="btn-icon" (click)="addItem()">+</button></span>
 
-      <button mat-button>Remove</button>
+      <div class="card-data">
+        <p>{{cartBooks.title}}</p>
+        <p>by {{cartBooks.author}}</p>
+        <p>{{cartBooks.price}}</p>
+        <div (click)="add()">ADD</div>
+        <span><button class="btn-icon" (click)="removeItem()">-</button></span>
+        <span>{{ amount }}</span>
+        <span><button class="btn-icon" (click)="addItem()">+</button></span>
+
+        <button mat-button (click)="removeFromCart(cartObj)">Remove</button>
+      </div>
       <br>
       <button class="card-btn" mat-button (click)="isClicked= true">PLACE ORDER</button>
     </div>
@@ -22,4 +24,3 @@
 </div>
 <br>
 <app-form *ngIf="isClicked"></app-form>
-<br>

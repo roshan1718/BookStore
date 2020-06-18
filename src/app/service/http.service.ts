@@ -8,14 +8,32 @@ import { Observable } from 'rxjs';
 })
 export class HttpService {
   bookUrl = environment.baseUrl;
+  cartUrl = environment.cartUrl;
 
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<string[]>{
     return this.http.get<string[]>(this.bookUrl + '/home');
   }
-  sortByPriceAsc(): Observable<string[]>{
-    return this.http.get<string[]>(this.bookUrl + '/sort/price-ascending');
+  sortByPriceAsc(): any{
+    return this.http.get(this.bookUrl + '/sort/price-ascending');
   }
+  sortByPriceDesc(): any{
+    return this.http.get<string[]>(this.bookUrl + '/sort/price-descending');
+  }
+  sortByNewArrival(): any{
+    return this.http.get<string[]>(this.bookUrl + '/sort/newest-arrival');
+  }
+  addToCart(cartObj): any{
+    return this.http.put(this.cartUrl + '/add-to-cart', cartObj , {responseType: 'text'});
+  }
+  removeFromcart(cartObj): any{
+    return this.http.put(this.cartUrl + '/remove-from-cart', cartObj);
+  }
+  
+  getBooksFromCart(userId): any{
+    return this.http.get<string[]>(this.cartUrl + '/getall/' + userId);
+  }
+
 
 }

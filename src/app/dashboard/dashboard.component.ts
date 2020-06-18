@@ -10,9 +10,9 @@ import { AddToBagService } from '../service/add-to-bag.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  count: number;
+  count = 0;
 
-  constructor(public addToBagService: AddToBagService, public router: Router) {
+  constructor(public addToBagService: AddToBagService) {
   }
 
   ngOnInit(): void {
@@ -20,5 +20,6 @@ export class DashboardComponent implements OnInit {
       this.count = counts;
     });
     this.count = this.count[0]; // By Default 0
+   // console.log(this.count);
   }
 }

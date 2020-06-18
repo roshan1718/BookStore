@@ -1,24 +1,34 @@
-<div >
+<div>
   <div>
     <div class="label-style">
       <p>Books [items]</p>
       <div class="selector-style">
-        <select class = "select-style">
-          <option>Sort by relevance</option>
-          <option>Price: Low to High</option>
-          <option (click) = "sortByPriceAsc()">Price: High to Low</option>
-          <option>Newest Arrivals</option>
-         </select>
+        <select (change)="changed($event)" class="select-style" >
+          <option value = "">Sort by relevance</option>
+          <option value = "Low">Price: Low to High</option>
+          <option value = "High">Price: High to Low</option>
+          <option value = "NewArrival">Newest Arrivals</option>
+        </select>
       </div>
     </div>
   </div>
 </div>
-<div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-<div class = "books-styles">
-    <div  class = "card-bet-space" *ngFor = "let book of bookArray">
-       <app-bookcart [book]=book></app-bookcart> 
+<div>
+  <div class="books-styles">
+    <div *ngFor="let book of bookArray | paginate: { itemsPerPage: 12, currentPage: p }">
+       <app-bookcart [book]=book></app-bookcart>
       <br>
     </div>
   </div>
 </div>
-  
+<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+<div  (pageChange)="p = $event" class="pagination">
+  <a href="#">&lt;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&gt;</a>
+</div>

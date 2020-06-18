@@ -8,79 +8,56 @@ import { HttpService } from 'src/app/service/http.service';
 })
 export class GetBookDetailsComponent implements OnInit {
   bookArray = [];
-
-  books = [
-    {
-     author: 'Chetan Bhagat',
-       title: 'The Girl in Room 105',
-       img: 'https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5',
-      price: 193
-    },
-    {
-      author: 'Rujuta Divekar',
-      title: 'Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    },
-    {
-      author: 'Dan Brown',
-      title: 'Angels And Demons',
-      img: 'http://books.google.com/books/content?id=d5xgYw4Ts0gC&printsec=frontcover&img=1&zoom=5',
-      price: 218
-    },
-    {
-      author: 'Rujuta Divekar',
-      title: 'Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    },
-    {
-      author: 'Rujuta Divekar',
-      title: 'Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    },
-    {
-      author: 'Rujuta Divekar',
-      title: 'Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    }
-    ,
-    {
-      author: 'Rujuta Divekar',
-      title: 'Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    }
-    ,
-    {
-      author: 'Rujuta Divekar',
-      title: 'Indian Superfoods',
-      img: 'https://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5',
-      price: 495
-    }
-  ];
-
+  image: string;
+  p: number = 1;
   constructor(private httpservice: HttpService) { }
 
   ngOnInit(): void {
     this.getBooks();
+   // this.sortByPriceAsc();
+   // this.sortByPriceDesc();
+   // this.sortByNewArrival();
   }
 
   // To fetch all books
   public getBooks(){
     this.httpservice.getBooks().subscribe(data => {
       this.bookArray = data;
-      // console.log(this.bookArray);
+     // console.log(this.bookArray);
      } );
-   // console.log(this.bookArray);
-
   }
   public sortByPriceAsc(){
     this.httpservice.sortByPriceAsc().subscribe(data => {
-      this.bookArray = data;
+      this.bookArray = data.content;
+      console.log(this.bookArray);
+
+     });
+  }
+  public sortByPriceDesc(){
+    this.httpservice.sortByPriceDesc().subscribe(data => {
+      this.bookArray = data.content;
       console.log(this.bookArray);
      });
   }
+  public sortByNewArrival(){
+    this.httpservice.sortByNewArrival().subscribe(data => {
+      this.bookArray = data.content;
+      console.log(this.bookArray);
+     });
+  }
+  public changed(order){
+    switch (order.target.value){
+case 'Low' : {
+  this.sortByPriceAsc();
+  break;
+}
+case 'High' : {
+  this.sortByPriceDesc();
+  break;
+}
+case 'NewArrival' : {
+  this.sortByNewArrival();
+}
+}
+   }
 }

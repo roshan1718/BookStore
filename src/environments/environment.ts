@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8085/book-store',
+  baseUrl: 'http://localhost:8080/book-store',
+  cartUrl: 'http://localhost:8080/home/cart',
   ApiUrl: 'http://localhost:8080/api/test/'
 };
 

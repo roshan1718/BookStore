@@ -1,16 +1,17 @@
 <div>
     <div>
-        <mat-card>
-            <div class="bs-img-bg">
-                <img class="example-header-image" src='{{getImageUrl()}}' />
-                
-                <mat-divider></mat-divider>
+        <mat-card class="mat-card">
+            <div>
+                <div class="bs-img-bg">
+                    <img class="image-style" [src]="getImageUrl()" />
+                    <!-- <p class="img__description">{{ book. description }}</p> -->
+                </div>
             </div>
-            <p class="title-style">{{ book.title }}</p>
-            <p class="author-style">by {{ book.author }}</p>
-            <p class="price-style">${{ book.price }}</p>
-            <button class="button-style1">ADD TO BAG</button>
-            <button (click)="colorChange()" [ngClass]="{'green': toggle}" class="button-style2">WISHLIST</button>
+            <p class="title-style">{{book.title}}</p>
+            <p class="author-style">by {{book.author}}</p>
+            <p class="price-style">${{book.price}}</p>
+            <button (click)="incrementBagCnt(); addToCart()" class="button-style1" disabled={{isDisabled}}>ADD TO BAG</button>
+            <button (click)="buttonColorChange(); incrementBagCnt()" [ngClass]="{'green': toggle}" class="button-style2">WISHLIST</button>
         </mat-card>
     </div>
 </div>

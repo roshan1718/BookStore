@@ -16,6 +16,11 @@ import { OrderSummeryComponent } from './components/order-summery/order-summery.
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
 
 import { BookcartComponent } from './components/bookcart/bookcart.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +32,10 @@ import { BookcartComponent } from './components/bookcart/bookcart.component';
     FormComponent,
     OrderSummeryComponent,
     PlaceOrderComponent,
-    BookcartComponent
+    BookcartComponent,
+    LoginComponent,
+    SignupComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,8 @@ import { BookcartComponent } from './components/bookcart/bookcart.component';
     ImportModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [BookcartComponent],
   bootstrap: [AppComponent]

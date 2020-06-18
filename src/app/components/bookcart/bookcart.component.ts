@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AddToBagService } from 'src/app/service/add-to-bag.service';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
+import { HttpService } from 'src/app/service/http.service';
+import { Cart } from 'src/app/model/cart';
 
 @Component({
   selector: 'app-bookcart',
@@ -10,30 +12,41 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class BookcartComponent implements OnInit {
   @Input() book: any;
   toggle: boolean;
-  count: number;
-  isDisabled = false;
-  imageUrlNotSanitized: SafeUrl;
+  isDisabled: boolean;
   imageUrl: string;
-colorChange(){
-  this.toggle = true;
-}
-constructor(public addToBag: AddToBagService, public sanitizer: DomSanitizer) {
- }
+  userId = 1;
+  bookQuantity = 1;
+
+books = [];
+result: string;
+
+  constructor(public addToBag: AddToBagService, public sanitizer: DomSanitizer, public httpService: HttpService) {
+  }
 
   ngOnInit(): void {
     this.imageUrl = this.book.image;
-    this.imageUrlNotSanitized = this.sanitizer.bypassSecurityTrustUrl(this.imageUrl);
-    // console.log(this.imageUrlNotSanitized);
-    // console.log(this.book.image);
-    console.log(this.imageUrl);
+    this.getImageUrl();
+   // this.getBooksFromCart(this.userId);
+  }
+  buttonColorChange() {
+    this.toggle = true;
+  }
+  getImageUrl() {
+    if (this.imageUrl != null) {
+      var firstReplacement = this.imageUrl.replace("'", '');
+      return this.sanitizer.bypassSecurityTrustUrl(firstReplacement.replace("'", ''));
+    }
   }
   incrementBagCnt() {
     this.addToBag.incrementBagCnt();
-    console.log(this.count);
+    // console.log(this.count);
     this.isDisabled = true;
-}
-getImageUrl() {
-  return this.sanitizer.bypassSecurityTrustUrl(this.book.image);
-
-}
+  }
+  addToCart(){
+     var cartObj = new Cart(this.userId, this.book.id, this.bookQuantity);
+    this.httpService.addToCart(cartObj).subscribe(data => {
+    });
+    console.log('Book added to cart');
+    console.log(cartObj);
+  } 
 }

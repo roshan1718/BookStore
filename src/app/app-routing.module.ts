@@ -7,13 +7,19 @@ import { FormComponent } from './components/form/form.component';
 import { OrderSummeryComponent } from './components/order-summery/order-summery.component';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
 import { BookcartComponent } from './components/bookcart/bookcart.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children: [{path: '', component: GetBookDetailsComponent},
     {path: 'cart', component: CartComponent},
-    {path: 'success', component: PlaceOrderComponent}
+    {path: 'success', component: PlaceOrderComponent},
+     {path: 'login', component: LoginComponent},
+     {path: 'signup', component: SignupComponent},
+     {path: 'password', component: ForgetPasswordComponent}
     ]
   },
  // {
@@ -22,8 +28,14 @@ const routes: Routes = [
     // children: [{path: 'cart', component: OrderSummeryComponent}] }]
   // },
   {
-    path: 'book', component: BookcartComponent
-  }
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'signup', component: SignupComponent
+  },
+  {
+    path: 'password', component: ForgetPasswordComponent
+  },
 ];
 
 @NgModule({
