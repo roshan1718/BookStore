@@ -17,7 +17,6 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +31,15 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
     ForgetPasswordComponent,
     WishlistComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ImportModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

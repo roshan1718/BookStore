@@ -16,14 +16,17 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent implements OnInit {
   NAME_PATTERN = /^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
   hide = true;
-  constructor() { }
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+ // constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
   nameFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(this.NAME_PATTERN),
   ]);
   matcher = new MyErrorStateMatcher();
-
-  ngOnInit(): void {
-  }
+  ngOnInit() {}
 
 }

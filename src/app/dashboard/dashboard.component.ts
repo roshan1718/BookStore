@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { AddToBagService } from '../service/add-to-bag.service';
 
 
@@ -17,4 +17,5 @@ export class DashboardComponent implements OnInit {
     this.count = this.count[0]; // By Default 0
    // console.log(this.count);
   }
+
 }

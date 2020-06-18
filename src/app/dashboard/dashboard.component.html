@@ -1,19 +1,25 @@
+<div class="dashboard-style">
 <mat-toolbar class="toolbar-style">
   <mat-toolbar-row>
     <mat-icon class="bs-icon-style">menu_book</mat-icon>
-    <p class="bs-label">Bookstore</p>
+    <a routerLink="/" class="bs-label"> <p>Bookstore</p></a>
     <span class="srch-bar-position"></span>
-    <input class="srch-bar-style" matInput placeholder=" &#xF002; Search..." />
+    <input type="text"class="srch-bar-style" matInput placeholder=" &#xF002; Search..." />
+    <!-- [(ngModel)]="query" id="listSearch" />
+    <div  *ngFor="let book of bookArray | LockFilter: query"></div>
+    <input type="checkbox" (change)="openModal($event, book)" class="check" id="{{book.ID}}">
+
+     -->
     <span class="cart-position"></span>
     <span>Cart</span>
     <a routerLink="/cart">
-      <mat-icon matBadge={{count}} matBadgeSize="small" class="cart-icon-style">
+      <mat-icon matBadge={{count}} matBadgeSize="small"class="cart-icon-style">
       shopping_cart</mat-icon>
     </a>
     <span class="wish-space"></span>
     <span >WishList</span>
     <a routerLink="/wishlist">
-      <mat-icon matBadge="1"matBadgeSize="small" matBadgeColor="warn"class="cart-icon-style">
+      <mat-icon matBadge="1" matBadgeSize="small"class="cart-icon-style">
         favorite_border</mat-icon>
     </a>
   </mat-toolbar-row>
@@ -33,3 +39,4 @@
     </p>
   </div>
 </footer>
+</div>

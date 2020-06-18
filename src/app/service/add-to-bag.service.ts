@@ -10,7 +10,6 @@ export class AddToBagService {
   constructor() {
     this.count = new BehaviorSubject(this.badgeCounter);
   }
-
   incrementBagCnt() {
    return this.count.next(this.badgeCounter++);
 }

@@ -1,28 +1,27 @@
 <div>
   <mat-card class="mat-card">
-    <div>
-      <p>My Cart (1)</p>
-      <img
-        class="card-img"
-        src="https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5"
-      />
+    <p>My Cart (1)</p>
+    <div *ngFor="let cartBooks of books">
+    <img class="card-img"
+          src="https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5" />
+        <div class="card-data">
+          <p>{{cartBooks.title}}</p>
+          <p>by {{cartBooks.author}}</p>
+          <p>{{cartBooks.price}}</p>
+          <div (click)="add()">ADD</div>
+          <span><mat-icon (click)="addItem()" >add_circle_outline</mat-icon></span>      
+          <span class="btn-icon">{{ amount }}</span>
+          <span><mat-icon class="btn-icon"(click)="removeItem()">remove_circle_outline</mat-icon></span>
+          <button class="rem-btn" mat-button (click)="removeFromCart(cartObj)">Remove</button>       
+        </div>
+          <mat-divider></mat-divider>
     </div>
-    <div class="card-data">
-      <p>DEMO</p>
-      <p>by TESTER</p>
-      <p>$$$$</p>
-      <div (click)="addToCart()">ADD</div>
-      <span><mat-icon (click)="addItem()" >add_circle_outline</mat-icon></span>      
-      <span class="btn-icon">{{ amount }}</span>
-      <span><mat-icon class="btn-icon"(click)="removeItem()">remove_circle_outline</mat-icon></span>
-      <button (click)="deleteItem()" mat-button>Remove</button>
       <br>
       <button class="card-btn" *ngIf="this.isButtonVisible"mat-button (click)="isClicked = true" (click)="this.isButtonVisible = false">
         PLACE ORDER
       </button>
-    </div>
   </mat-card>
 </div>
-<br />
+<br>
 <app-customer-details *ngIf="isClicked"></app-customer-details>
 

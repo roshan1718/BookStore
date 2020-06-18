@@ -11,9 +11,12 @@
   margin-top: 5%;
   margin-bottom: 5%;
 }
-
-.title-style {
+.des-style{
   font-weight: bold;
+  font-size: 18px;
+
+}
+.title-style {
   font-size: 90%;
   line-height: 16px;
   white-space: nowrap; 
@@ -23,9 +26,10 @@
   }
 
 .author-style {
-  font-size: 47%;
+  font-size: 50%;
   margin-left: 2%;
   margin-top: -4%;
+  color: grey;
 }
 .price-style {
   font-size: 75%;
@@ -55,17 +59,16 @@
  }
 
 .tooltip-wrap {
-
   background-color: rgb(245, 247, 247);
   margin: -0px -15px -8px -15px;
   margin-top: -16px;
 }
 .tooltip-wrap .tooltip-content {
   display: none;
-  position: absolute;
-  bottom: -64%;
-  width: 550px;
-  left: 0;
+  position:absolute;
+  bottom: 45px;
+  width: 350px;
+  left: -155px;
   right: 0;
   background-color: #fff;
 

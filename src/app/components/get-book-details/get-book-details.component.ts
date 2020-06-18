@@ -14,32 +14,37 @@ export class GetBookDetailsComponent implements OnInit {
 
     ngOnInit(): void {
       this.getBooks();
-      this.sortByPriceAsc();
-      // this.sortByPriceDesc();
-      // this.sortByNewArrival();
     }
     // To fetch all books
     public getBooks(){
       this.httpservice.getBooks().subscribe(data => {
         this.bookArray = data;
-       } );
+        });
     }
-    public sortByPriceAsc(){
-      this.httpservice.sortByPriceAsc().subscribe(data => {
-        this.bookArray = data;
-        console.log(this.bookArray);
-       });
-    }
-  public sortByPriceDesc(){
-      this.httpservice.sortByPriceDesc().subscribe(data => {
-        this.bookArray = data;
-        console.log(this.bookArray);
-       });
-    }
-    public sortByNewArrival(){
-      this.httpservice.sortByNewArrival().subscribe(data => {
-        this.bookArray = data;
-        console.log(this.bookArray);
-       });
+
+    sort(order){
+      switch (order.target.value) {
+          case 'Low' : {
+              this.httpservice.sortByPriceAsc().subscribe(data => {
+               this.bookArray = data.content;
+               console.log(this.bookArray);
+               });
+              break;
+          }
+          case 'High': {
+            this.httpservice.sortByPriceDesc().subscribe(data => {
+              this.bookArray = data.content;
+              console.log(this.bookArray);
+             });
+            break;
+          }
+          case 'NewArrival': {
+            this.httpservice.sortByNewArrival().subscribe(data => {
+              this.bookArray = data.content;
+              console.log(this.bookArray);
+             });
+            break;
+          }
+        }
     }
 }
