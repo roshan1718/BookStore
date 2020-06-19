@@ -9,70 +9,64 @@ import { GetBookDetailsComponent } from '../get-book-details/get-book-details.co
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
- // @ViewChild(GetBookDetailsComponent) Books = [];
- @Input() book: any;
-  bookA = [];
-  books = [];
-  userId = 1;
-  public isClicked: boolean;
-  public amount: number;
+export class CartComponent implements OnInit, AfterViewInit {
+// @ViewChild(GetBookDetailsComponent) Books;
+// @Input() book: any;
+//book = []
+ public isClicked: boolean;
+ public isButtonVisible = true;
+ public amount: number;
+ books : any;
+ userId = 1;
+ // public cartObj = new Cart(1, 101, 1);
+ constructor( public httpService: HttpService ) { }
 
-  constructor( public httpService: HttpService) { }
+ ngOnInit(): void {
+   this.isClicked = false;
+   this.getBooksFromCart(this.userId);
+ }
+ ngAfterViewInit() {
+  // this.book = this.Books.bookArray;
+  // this.message = this.child.message
 
-  ngOnInit(): void {
-     this.isClicked = false;
-     this.getBooksFromCart(this.userId);
-     this.getBooksFromWishlist(this.userId);
-  }
-  // ngAfterViewInit(){
-  //   this.bookA = this.Books.bookArray;
-  // }
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-  }
-  add() {
-    this.amount = 1;
-  }
+}
+ add() {
+   this.amount = 1;
+ }
+ addToCart() {
+   this.amount = 1;
+ }
 
-  addItem() {
-    this.amount = this.amount + 1;
-    // console.log('plus is : ' + this.amount );
-  }
+ deleteItem(){
+   this.amount = this.amount * 0;
+ }
+ addItem() {
+   this.amount = this.amount + 1;
+ }
 
-  removeItem() {
-    if (this.amount > 0) {
-      this.amount = this.amount - 1;
-    }
-    else {
-      this.amount = this.amount;
-    }
-  }
-  getBooksFromCart(userId){
-    this.httpService.getBooksFromCart(userId).subscribe(data =>{
-      this.books = data;
-      this.userId = userId;
-      console.log('Data get in card', data);
-    });
-    console.log(userId);
-   // console.log(this.books.bookId);
-  }
-  getBooksFromWishlist(userId){
-    this.httpService.getBooksFromWishlist(userId).subscribe(data =>{
-      this.books = data;
-      this.userId = userId;
-      console.log('Data get in wishlist', data);
-    });
-    console.log(userId);
-   // console.log(this.books.bookId);
-  }
-  removeFromCart(){
-    var cartObj = new Cart(this.userId, this.book.id, 1);
+ removeItem() {
+   if (this.amount > 0) {
+     this.amount = this.amount - 1;
+   }
+   else {
+     this.amount = this.amount;
+   }
+ }
+ getBooksFromCart(userId){
+   this.httpService.getBooksFromCart(userId).subscribe(data => {
+     this.books = data;
+     this.userId = userId;
+     console.log('Data in get card', data);
+    // console.log('>>>',this.books.id);
+   });
+   console.log(userId);
+ }
+  removeFromCart(book){
+    var cartObj = new Cart(this.userId, book.id, 1);
     this.httpService.removeFromcart(cartObj).subscribe(data => {
      // this.userId = userId
+     this.getBooksFromCart(this.userId);
     });
     console.log('Book removed from cart');
-    console.log(cartObj);
-    console.log('book Id', this.book.id);
   }
 }

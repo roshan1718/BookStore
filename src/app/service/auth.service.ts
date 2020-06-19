@@ -24,9 +24,9 @@ authUrl = environment.authUrl;
   //   }, httpOptions);
   // }
   registerUser(signUpObj): any{
-    return this.http.post(this.authUrl + '/signup', signUpObj);
+    return this.http.post(this.authUrl + '/signup', signUpObj, {responseType: 'text'});
   }
   loginUser(signInObj): any{
-    return this.http.post(this.authUrl + '/signin', signInObj);
+    return this.http.post(this.authUrl + '/signin', signInObj, {responseType: 'text'});
   }
 }

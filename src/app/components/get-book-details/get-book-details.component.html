@@ -17,6 +17,7 @@
   <div class="books-styles">
     <div *ngFor="let book of bookArray | paginate: { itemsPerPage: 12, currentPage: p }">
        <app-bookcart [book]=book></app-bookcart>
+       <!-- <app-cart>[book]=book</app-cart> -->
       <br>
     </div>
   </div>

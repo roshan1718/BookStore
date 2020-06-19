@@ -33,15 +33,15 @@
         <mat-card-actions>
           <div class="button-margin">
             <div class="button-style">
-              <button class="login-btn" mat-button>Login</button>
+              <button class="login-btn" (click) = "loginUser()" mat-button>Login</button>
               <a routerLink="/signup">
                 <button class="signup-btn" mat-button>Signup</button>
               </a>
             </div>
           </div>
           <br>
-          <p style="margin-left: 2%;">forget 
-            <a class="link-style" routerLink="/password">Password</a></p>
+          <p style="margin-left: 2%;">forgot 
+            <a class="link-style" routerLink="/password">Password?</a></p>
         </mat-card-actions>
       </div>
     </mat-card>

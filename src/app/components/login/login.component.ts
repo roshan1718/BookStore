@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   loginUser(){
-    this.authService.registerUser(this.signInObj).subscribe(data => {
+    this.authService.loginUser(this.signInObj).subscribe(data => {
     });
   }
 
