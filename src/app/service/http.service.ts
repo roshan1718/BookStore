@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class HttpService {
   bookUrl = environment.baseUrl;
   cartUrl = environment.cartUrl;
-
+  wishlistUrl = environment.wishlistUrl;
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<string[]>{
@@ -32,5 +32,14 @@ export class HttpService {
   }
   getBooksFromCart(userId): any{
     return this.http.get<string[]>(this.cartUrl + '/getall/' + userId);
+  }
+  addToWishlist(wishlistObj): any{
+    return this.http.post(this.wishlistUrl + '/add-to-wishlist', wishlistObj, {responseType: 'text'});
+  }
+  removeFromWishlist(wishlistObj): any{
+    return this.http.post(this.wishlistUrl + '/remove-from-wishlist', wishlistObj, {responseType: 'text'});
+  }
+  getBooksFromWishlist(userId): any{
+    return this.http.get<string[]>(this.wishlistUrl + '/getall/' + userId);
   }
 }

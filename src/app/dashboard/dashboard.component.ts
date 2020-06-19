@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { AddToBagService } from '../service/add-to-bag.service';
-
+import { AddToWishlistService } from '../service/add-to-wishlist.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,14 +8,19 @@ import { AddToBagService } from '../service/add-to-bag.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
- count = 0;
-  constructor(public addToBagService: AddToBagService) { }
+ cartCount = 0;
+ wishCount = 0;
+  constructor(public addToBagService: AddToBagService, public addToWishService: AddToWishlistService) { }
   ngOnInit(): void {
     this.addToBagService.count.subscribe(counts => {
-      this.count = counts;
+      this.cartCount = counts;
     });
-    this.count = this.count[0]; // By Default 0
-   // console.log(this.count);
+    this.cartCount = this.cartCount[0];
+
+    this.addToWishService.count.subscribe(counts => {
+      this.wishCount = counts;
+    });
+    this.wishCount = this.wishCount[0]; // By Default 0
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
 import { Cart } from 'src/app/model/cart';
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,14 +13,23 @@ export class CartComponent implements OnInit {
   public isClicked: boolean;
   public isButtonVisible = true;
   public amount: number;
+  imageUrl: string;
   books = [];
   userId = 1;
-  public cartObj = new Cart(1, 101, 1);
-  constructor( public httpService: HttpService ) { }
+  bookQuantity;
+
+  constructor( public httpService: HttpService, public sanitizer: DomSanitizer ) { }
 
   ngOnInit(): void {
     this.isClicked = false;
     this.getBooksFromCart(this.userId);
+  }
+  getImageUrl(book) {
+    this.imageUrl = book.image;
+    if (this.imageUrl != null) {
+      var firstReplacement = this.imageUrl.replace("'", '');
+      return this.sanitizer.bypassSecurityTrustUrl(firstReplacement.replace("'", ''));
+    }
   }
   add() {
     this.amount = 1;
@@ -32,7 +43,6 @@ export class CartComponent implements OnInit {
   }
   addItem() {
     this.amount = this.amount + 1;
-    // console.log('plus is : ' + this.amount );
   }
 
   removeItem() {
@@ -43,13 +53,14 @@ export class CartComponent implements OnInit {
       this.amount = this.amount;
     }
   }
-  removeFromCart(userId){
-    this.httpService.removeFromcart(this.userId).subscribe(data =>
-     {
-      console.log(data);
+
+  removeFromCart(book){
+    var cartObj = new Cart(this.userId, book.id, this.bookQuantity );
+    this.httpService.removeFromcart(cartObj).subscribe(data => {
+     this.getBooksFromCart(this.userId);
     });
-    console.log(this.cartObj);
-    console.log('book remove from cart');
+    console.log('Book removed from cart');
+
   }
   getBooksFromCart(userId){
     this.httpService.getBooksFromCart(userId).subscribe(data => {
@@ -58,6 +69,5 @@ export class CartComponent implements OnInit {
       console.log('Data in get card', data);
     });
     console.log(userId);
-   // console.log(this.books.bookId);
   }
 }

@@ -3,8 +3,8 @@
     <p>My Cart (1)</p>
     <div *ngFor="let cartBooks of books">
     <img class="card-img"
-          src="https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5" />
-        <div class="card-data">
+    [src]="getImageUrl(cartBooks)"/>
+    <div class="card-data">
           <p>{{cartBooks.title}}</p>
           <p>by {{cartBooks.author}}</p>
           <p>{{cartBooks.price}}</p>
@@ -12,7 +12,7 @@
           <span><mat-icon (click)="addItem()" >add_circle_outline</mat-icon></span>      
           <span class="btn-icon">{{ amount }}</span>
           <span><mat-icon class="btn-icon"(click)="removeItem()">remove_circle_outline</mat-icon></span>
-          <button class="rem-btn" mat-button (click)="removeFromCart(cartObj)">Remove</button>       
+          <button class="rem-btn" mat-button (click)="removeFromCart(cartBooks)">Remove</button>       
         </div>
           <mat-divider></mat-divider>
     </div>
