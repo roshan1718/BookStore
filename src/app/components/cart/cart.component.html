@@ -4,7 +4,7 @@
     <p>My Cart</p>
     <div *ngFor="let cartBooks of books">
     <img class="card-img"
-          src="https://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5" />
+    [src]="getImageUrl(cartBooks)"/>
         <div class="card-data">
           <p>{{cartBooks.title}}</p>
           <p>by {{cartBooks.author}}</p>
