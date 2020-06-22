@@ -1,27 +1,31 @@
 <div>
   <mat-card class="mat-card">
-    <p>My Cart (1)</p>
+    <p class="card-style">My Cart ({{ books?.length }})</p>
     <div *ngFor="let cartBooks of books">
-    <img class="card-img"
-    [src]="getImageUrl(cartBooks)"/>
-    <div class="card-data">
-          <p>{{cartBooks.title}}</p>
-          <p>by {{cartBooks.author}}</p>
-          <p>{{cartBooks.price}}</p>
-          <div (click)="add()">ADD</div>
-          <span><mat-icon (click)="addItem()" >add_circle_outline</mat-icon></span>      
-          <span class="btn-icon">{{ amount }}</span>
-          <span><mat-icon class="btn-icon"(click)="removeItem()">remove_circle_outline</mat-icon></span>
-          <button class="rem-btn" mat-button (click)="removeFromCart(cartBooks)">Remove</button>       
-        </div>
-          <mat-divider></mat-divider>
+      <img class="card-img" [src]="getImageUrl(cartBooks)" />
+      <div class="card-data">
+        <p class="title-style">{{ cartBooks.title }}</p>
+        <p class="author-style">by {{ cartBooks.author }}</p>
+        <p class="price-style">Rs.{{ cartBooks.price }}</p>
+        <span><button (click)="addItem()">+</button></span>
+        <span class="btn-icon">{{ bookQuantity }}</span>
+        <span><button (click)="removeItem(); openSnackBar('Book Remove From Cart Successfull !!!','Remove')">-</button></span>
+        <button class="rem-btn" mat-button (click)="removeFromCart(cartBooks)">
+          Remove
+        </button>
+      </div>
+      <mat-divider></mat-divider>
     </div>
-      <br>
-      <button class="card-btn" *ngIf="this.isButtonVisible"mat-button (click)="isClicked = true" (click)="this.isButtonVisible = false">
-        PLACE ORDER
-      </button>
+    <br />
+    <button
+      class="card-btn"
+      *ngIf="this.isButtonVisible"
+      mat-button
+      (click)="openSnackBar('Place Order Successfull !!!','Submit'); isClicked = true; this.isButtonVisible = false"
+    >
+      PLACE ORDER
+    </button>
   </mat-card>
 </div>
-<br>
+<br />
 <app-customer-details *ngIf="isClicked"></app-customer-details>
-

@@ -2,15 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 880px;
-  margin: auto;
+  width: fit-content;
+  margin: 10% 0% 5% 10%;
+  
   height: 500px;
-}
-.form-style {
   background-color: #f6eaea;
-  height: 400px;
-  width: 380px;
-  margin-top: 10%;
 }
 .header-img-style {
   border-radius: 100%;

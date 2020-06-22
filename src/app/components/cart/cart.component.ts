@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
 import { Cart } from 'src/app/model/cart';
 import { DomSanitizer } from '@angular/platform-browser';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { CartPlaceOrderService } from 'src/app/service/cart-place-order.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,20 +11,26 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  @Input() book: any;
   public isClicked: boolean;
   public isButtonVisible = true;
   public amount: number;
   imageUrl: string;
   books = [];
   userId = 1;
-  bookQuantity;
+  bookQuantity = 1;
 
-  constructor( public httpService: HttpService, public sanitizer: DomSanitizer ) { }
+  constructor( public cartPlaceOrderService: CartPlaceOrderService, private snackBar: MatSnackBar,
+               public httpService: HttpService, public sanitizer: DomSanitizer ) { }
 
   ngOnInit(): void {
     this.isClicked = false;
     this.getBooksFromCart(this.userId);
+  }
+
+  openSnackBar(message: string, action: string) {
+     this.snackBar.open(message, action, {
+        duration: 2000,
+     });
   }
   getImageUrl(book) {
     this.imageUrl = book.image;
@@ -31,27 +39,26 @@ export class CartComponent implements OnInit {
       return this.sanitizer.bypassSecurityTrustUrl(firstReplacement.replace("'", ''));
     }
   }
-  add() {
-    this.amount = 1;
-  }
-  addToCart() {
-    this.amount = 1;
-  }
 
-  deleteItem(){
-    this.amount = this.amount * 0;
-  }
   addItem() {
-    this.amount = this.amount + 1;
+    this.bookQuantity = this.bookQuantity + 1;
   }
 
   removeItem() {
-    if (this.amount > 0) {
-      this.amount = this.amount - 1;
+    if (this.bookQuantity > 0) {
+      this.bookQuantity = this.bookQuantity - 1;
     }
     else {
-      this.amount = this.amount;
+      this.bookQuantity = this.bookQuantity;
     }
+  }
+  getBooksFromCart(userId){
+    this.httpService.getBooksFromCart(userId).subscribe(data => {
+      this.books = data;
+      this.userId = userId;
+      this.cartPlaceOrderService.getBooksFromCart(this.books);
+      console.log('Data in get card', data);
+    });
   }
 
   removeFromCart(book){
@@ -59,15 +66,6 @@ export class CartComponent implements OnInit {
     this.httpService.removeFromcart(cartObj).subscribe(data => {
      this.getBooksFromCart(this.userId);
     });
-    console.log('Book removed from cart');
-
-  }
-  getBooksFromCart(userId){
-    this.httpService.getBooksFromCart(userId).subscribe(data => {
-      this.books = data;
-      this.userId = userId;
-      console.log('Data in get card', data);
-    });
-    console.log(userId);
+   // console.log('Book removed from cart');
   }
 }

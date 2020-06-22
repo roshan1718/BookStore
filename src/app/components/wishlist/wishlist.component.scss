@@ -16,6 +16,9 @@
   margin-top: -23%;
   margin-left: 130px;
 }
+.card-style{
+  font-size: 18px ;
+}
 
 .btn-icon{
   border-radius: 100%;
@@ -37,5 +40,20 @@
 .btn-style{
   margin-left: 250px;
   margin-bottom: 5%;
+}
+.title-style {
+  font-size: 90%;
+  white-space: nowrap; 
+  width: 180px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  }
 
+.author-style {
+  font-size: 50%;
+  color: grey;
+}
+.price-style {
+  font-size: 75%;
+  font-weight: bold;
 }

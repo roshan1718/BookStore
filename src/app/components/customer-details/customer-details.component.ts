@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 // Error when invalid control is dirty, touched.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    return !!(control && control.invalid && (control.dirty || control.touched ));
+   // const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched  ));
   }
 }
 
@@ -51,10 +53,17 @@ export class CustomerDetailsComponent implements OnInit {
     Validators.required,
   ]);
   matcher = new MyErrorStateMatcher();
-  constructor() { }
+  constructor( private snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
      this.isClicked = false;
   }
 
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+       duration: 2000,
+    });
+
 }
+}
+

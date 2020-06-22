@@ -10,25 +10,20 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children: [{path: '', component: GetBookDetailsComponent},
     {path: 'cart', component: CartComponent},
     {path: 'success', component: PlaceOrderComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'signup', component: SignupComponent},
-    {path: 'forget-password', component: ForgetPasswordComponent},
-    {path: 'wishlist', component: WishlistComponent}
+    {path: 'wishlist', component: WishlistComponent},
     ]
   },
   {
     path: 'cart', component: CartComponent,
     children: [{path: 'cart', component: CustomerDetailsComponent,
     children: [{path: 'cart', component: OrderSummaryComponent}] }]
-  },
-  {
-    path: 'success', component: PlaceOrderComponent
   },
   {
     path: 'login', component: LoginComponent
@@ -40,8 +35,13 @@ const routes: Routes = [
     path: 'forget-password', component: ForgetPasswordComponent
   },
   {
-    path: 'wishlist', component: WishlistComponent
+    path: 'reset-password', component: ResetPasswordComponent
   }
+
+
+
+
+
 ];
 
 @NgModule({

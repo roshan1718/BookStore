@@ -11,6 +11,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule  ({
@@ -26,7 +27,8 @@ import { MatDividerModule } from '@angular/material/divider';
                 FormsModule,
                 ReactiveFormsModule,
                 MatBadgeModule,
-                MatDividerModule
+                MatDividerModule,
+                MatSnackBarModule
             ],
     exports : [  MatToolbarModule,
                 MatIconModule,
@@ -40,7 +42,8 @@ import { MatDividerModule } from '@angular/material/divider';
                 FormsModule,
                 ReactiveFormsModule,
                 MatBadgeModule,
-                MatDividerModule
+                MatDividerModule,
+                MatSnackBarModule
             ]
 })
 

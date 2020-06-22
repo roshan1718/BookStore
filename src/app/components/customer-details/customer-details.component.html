@@ -90,7 +90,7 @@
         <div class="button">
           <button class="cust-btn"*ngIf="this.isButtonVisible" 
           mat-button (click)="isClicked= true"
-          (click)="this.isButtonVisible = false">CONTINUE</button>
+          (click)="openSnackBar('Customer Details Added Successfull !!!','Submit'); this.isButtonVisible = false">CONTINUE</button>
         </div>
       </div>
     </div>

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -10,8 +9,16 @@ export class HttpService {
   bookUrl = environment.baseUrl;
   cartUrl = environment.cartUrl;
   wishlistUrl = environment.wishlistUrl;
-  constructor(private http: HttpClient) { }
+ 
 
+//  header = new HttpHeaders().set('token', localStorage.getItem('token'));
+//    headers = headers.set('header-name-2', 'header-value-2');
+
+  constructor(private http: HttpClient) { }
+  
+  //  this.http
+  //  .post('api/items/add', body, { headers: headers })
+  //   .subscribe()
   getBooks(): Observable<string[]>{
     return this.http.get<string[]>(this.bookUrl + '/home');
   }
@@ -28,7 +35,7 @@ export class HttpService {
     return this.http.put(this.cartUrl + '/add-to-cart', cartObj , {responseType: 'text'});
   }
   removeFromcart(cartObj): any{
-    return this.http.put(this.cartUrl + '/remove-from-cart', cartObj);
+    return this.http.put(this.cartUrl + '/remove-from-cart', cartObj,  {responseType: 'text'});
   }
   getBooksFromCart(userId): any{
     return this.http.get<string[]>(this.cartUrl + '/getall/' + userId);

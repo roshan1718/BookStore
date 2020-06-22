@@ -12,15 +12,19 @@ export class DashboardComponent implements OnInit {
  wishCount = 0;
   constructor(public addToBagService: AddToBagService, public addToWishService: AddToWishlistService) { }
   ngOnInit(): void {
+    this.incrementBagCount();
+    this.incrementWishlistCount();
+   }
+  incrementBagCount(){
     this.addToBagService.count.subscribe(counts => {
       this.cartCount = counts;
     });
     this.cartCount = this.cartCount[0];
-
+  }
+  incrementWishlistCount(){
     this.addToWishService.count.subscribe(counts => {
       this.wishCount = counts;
     });
     this.wishCount = this.wishCount[0]; // By Default 0
   }
-
 }
