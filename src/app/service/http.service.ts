@@ -9,16 +9,9 @@ export class HttpService {
   bookUrl = environment.baseUrl;
   cartUrl = environment.cartUrl;
   wishlistUrl = environment.wishlistUrl;
- 
-
-//  header = new HttpHeaders().set('token', localStorage.getItem('token'));
-//    headers = headers.set('header-name-2', 'header-value-2');
 
   constructor(private http: HttpClient) { }
-  
-  //  this.http
-  //  .post('api/items/add', body, { headers: headers })
-  //   .subscribe()
+
   getBooks(): Observable<string[]>{
     return this.http.get<string[]>(this.bookUrl + '/home');
   }

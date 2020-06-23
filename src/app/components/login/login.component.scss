@@ -1,16 +1,11 @@
 .card-style {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 880px;
-  margin: auto;
-  height: 500px;
-}
-.form-style {
-  background-color: #f6eaea;
-  height: 400px;
-  width: 380px;
+  width: fit-content;
+  margin: auto; 
   margin-top: 10%;
+  background-color: #f6eaea;
 }
 .header-img-style {
   border-radius: 100%;
@@ -19,8 +14,8 @@
   margin-top: -28%;
 }
 .login-name {
-  margin-top: 63px;
-  margin-left: -111%;
+  margin-top: 45%;
+  margin-left: -121%;
 }
 .field-style {
   width: 370px;

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
+import { SignUp } from 'src/app/model/sign-up';
 // Error when invalid control is dirty, touched.
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -14,15 +15,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  form: any = {};
-  isSuccessful = false;
-  isSignUpFailed = false;
-  errorMessage = '';
-
   NAME_PATTERN = /^[A-Z][a-zA-Z]{2,}$/;
-  MOBILE_PATTERN = /^[1-9]{1}[0-9]{9}$/;
   EMAIL_PATTERN = /^[a-zA-Z0-9]{1,}([.\_\+\-]?[a-zA-Z0-9]{1,})?[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]?[a-z]{2})?$/;
   hide = true;
+public signUpObj = new SignUp();
   constructor(private authService: AuthService) { }
   nameFormControl = new FormControl('', [
     Validators.required,
@@ -32,25 +28,14 @@ export class SignupComponent implements OnInit {
     Validators.required,
     Validators.pattern(this.EMAIL_PATTERN),
   ]);
-  numberFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern(this. MOBILE_PATTERN ),
-  ]);
   matcher = new MyErrorStateMatcher();
 
   ngOnInit(): void {
   }
-  onSubmit() {
-    this.authService.register(this.form).subscribe(
-      data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
-      }
-    );
-  }
+registerUser(){
+  this.authService.registerUser(this.signUpObj).subscribe(data => {
+    console.log(data);
+  });
+  console.log("Register successfully");
+}
 }

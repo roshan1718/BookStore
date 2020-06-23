@@ -42,7 +42,6 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     ImportModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

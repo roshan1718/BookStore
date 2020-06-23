@@ -1,11 +1,10 @@
 .card-style {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: fit-content;
-  margin: 10% 0% 5% 10%;
-  
-  height: 500px;
+  margin: auto; 
+  margin-top: 5%;
   background-color: #f6eaea;
 }
 .header-img-style {
@@ -16,11 +15,11 @@
   background-color: brown;
 }
 .signup-name {
-  margin-top: 63px;
-  margin-left: -111%;
+  margin-top: 40%;
+  margin-left: -115%;
 }
 .field-style {
-  width: 370px;
+  width: 100%;
 }
 .radio-btn {
   margin-left: 15px;
@@ -42,7 +41,7 @@
 .signup-btn {
   background-color: brown;
   color: white;
-  width: 150px;
+  width: 100%;
 }
 .link-style {
   color: brown;
