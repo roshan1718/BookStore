@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
+  header = {headers: new HttpHeaders().set('token', localStorage.getItem('email'))};
 
   authUrl = environment.authUrl;
   constructor(private http: HttpClient) { }
@@ -15,5 +16,11 @@ export class AuthService {
   }
   loginUser(signInObj): any{
     return this.http.post(this.authUrl + '/signin', signInObj, {responseType: 'text'});
+  }
+  forgotPassword(email): any {
+    return this.http.get(this.authUrl + '/forgot-password/' + email, {responseType: 'text'});
+  }
+  resetPassword(resetPasswordObj): any {
+    return this.http.post(this.authUrl + '/reset-password', resetPasswordObj, this.header);
   }
 }

@@ -34,21 +34,21 @@ export class WishlistComponent implements OnInit {
     }
   }
   getBooksFromWishlist(userId) {
-    this.httpService.getBooksFromWishlist(userId).subscribe(data => {
+    this.httpService.getAllBooks('/home/wishlist/getall/').subscribe(data => {
       this.books = data;
       this.userId = userId;
     });
   }
   removeFromWishList(book) {
     var cartObj = new Wishlist(this.userId, book.id);
-    this.httpService.removeFromWishlist(cartObj).subscribe(data => {
+    this.httpService.postBook(cartObj, '/home/wishlist/remove-from-wishlist').subscribe(data => {
       this.getBooksFromWishlist(this.userId);
     });
    // console.log('book remove from cart');
   }
   addToCart(book) {
-      var cartObj = new Cart(this.userId, book.id, this.bookQuantity);
-      this.httpService.addToCart(cartObj).subscribe(data => {
+      var cartObj = new Cart(book.id, this.bookQuantity);
+      this.httpService.postBook(cartObj, '/home/cart/add-to-cart').subscribe(data => {
       });
      // console.log('Book added to cart');
   }

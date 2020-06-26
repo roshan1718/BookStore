@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080/book-store',
-  cartUrl: 'http://localhost:8080/home/cart',
-  wishlistUrl: 'http://localhost:8080/home/wishlist',
+  baseUrl: 'http://localhost:8080',
   authUrl: 'http://localhost:8080/api/auth'
 };
 

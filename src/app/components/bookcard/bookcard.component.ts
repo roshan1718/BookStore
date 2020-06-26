@@ -34,7 +34,7 @@ export class BookcardComponent implements OnInit {
 
     });
  }
-  colorChange() {
+  sizeChange() {
     this.toggle = true;
   }
   getImageUrl() {
@@ -45,25 +45,21 @@ export class BookcardComponent implements OnInit {
   }
   incrementBagCnt() {
     this.addToBag.incrementBagCnt();
-   // console.log(this.count);
     this.isDisabled = true;
   }
   incrementWishlistCnt() {
     this.addToWish.incrementWishlistCnt();
-   // console.log(this.count);
     this.isDisabled = true;
   }
 
   addToCart(){
-  var cartObj = new Cart(this.userId, this.book.id, this.bookQuantity);
-   this.httpService.addToCart(cartObj).subscribe(data => {});
-   console.log('Book added to cart');
-   console.log(cartObj);
+  var cartObj = new Cart(this.book.id, this.bookQuantity);
+  this.httpService.postBook(cartObj, '/home/cart/add-to-cart').subscribe(data => {});
+  console.log('Book added to cart');
  }
  addToWishlist(){
-  var wishlistObj = new Wishlist(this.userId, this.book.id);
-  this.httpService.addToWishlist(wishlistObj).subscribe(data => {});
+  var cartObj = new Wishlist(this.userId, this.book.id);
+  this.httpService.postBook(cartObj, '/home/wishlist/add-to-wishlist').subscribe(data => {});
   console.log('Book added to wishlist');
-  console.log(wishlistObj);
 }
 }

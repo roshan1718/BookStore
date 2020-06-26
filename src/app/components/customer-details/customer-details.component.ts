@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup } from '@angular/forms';
+import { HttpService } from 'src/app/service/http.service';
+import { CustomerDetails } from 'src/app/model/customer-details';
 
 @Component({
   selector: 'app-customer-details',
@@ -13,19 +15,20 @@ export class CustomerDetailsComponent implements OnInit {
   myForm: FormGroup;
   public isButtonVisible = true;
   public isClicked: boolean;
+
+  public customerObj = new CustomerDetails();
+
   MOBILE_PATTERN = /^[1-9]{1}[0-9]{9}$/;
   PINCODE_PATTERN = /^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$/;
-  // ADDRESS_PATTERN = /\d{1,5}\s\w.\s(\b\w*\b\s){1,2}\w*\./;
   NAME_PATTERN = /^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
-  // CITY_PATTERN = /([A-Z][a-z]+\s?)+,\s[A-Z]{2}\s\d{5}-?\d{4}?/;
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(public httpService: HttpService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.isClicked = false;
     this.myForm = new FormGroup({
       name: new FormControl(null, [Validators.required, Validators.pattern(this.NAME_PATTERN)]),
-      number: new FormControl(null, [Validators.required, Validators.pattern(this.MOBILE_PATTERN)]),
+     // number: new FormControl(null, [Validators.required, Validators.pattern(this.MOBILE_PATTERN)]),
       address: new FormControl(null, Validators.required),
       pincode: new FormControl(null, [Validators.required, Validators.pattern(this.PINCODE_PATTERN)]),
       locality: new FormControl(null, Validators.required),
@@ -39,7 +42,11 @@ export class CustomerDetailsComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 2000,
     });
-
+  }
+  addDetails(){
+    this.httpService.addDetails(this.customerObj).subscribe(data => {
+      console.log(data);
+    });
   }
 }
 

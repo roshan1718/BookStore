@@ -1,45 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
   bookUrl = environment.baseUrl;
-  cartUrl = environment.cartUrl;
-  wishlistUrl = environment.wishlistUrl;
-
+  header = {headers: new HttpHeaders().set('token', localStorage.getItem('token'))};
   constructor(private http: HttpClient) { }
 
-  getBooks(): Observable<string[]>{
-    return this.http.get<string[]>(this.bookUrl + '/home');
+  getCall(url): any{
+    return this.http.get(this.bookUrl + url);
   }
-  sortByPriceAsc(): any{
-    return this.http.get(this.bookUrl + '/sort/price-ascending');
+  getAllBooks(url): any{
+    return this.http.get<string[]>(this.bookUrl + url, this.header);
   }
-  sortByPriceDesc(): any{
-    return this.http.get(this.bookUrl + '/sort/price-descending');
+  postBook(cartObj, url): any{
+    return this.http.post(this.bookUrl + url, cartObj, this.header);
   }
-  sortByNewArrival(): any{
-    return this.http.get(this.bookUrl + '/sort/newest-arrival');
+
+  addDetails(customerObj): any{
+     return this.http.post(this.bookUrl + '/customer-details/add-details', customerObj, this.header);
   }
-  addToCart(cartObj): any{
-    return this.http.put(this.cartUrl + '/add-to-cart', cartObj , {responseType: 'text'});
+  existedDetails(): any{
+    return this.http.get(this.bookUrl + '/customer-details/isexisted', this.header);
   }
-  removeFromcart(cartObj): any{
-    return this.http.put(this.cartUrl + '/remove-from-cart', cartObj,  {responseType: 'text'});
-  }
-  getBooksFromCart(userId): any{
-    return this.http.get<string[]>(this.cartUrl + '/getall/' + userId);
-  }
-  addToWishlist(wishlistObj): any{
-    return this.http.post(this.wishlistUrl + '/add-to-wishlist', wishlistObj, {responseType: 'text'});
-  }
-  removeFromWishlist(wishlistObj): any{
-    return this.http.post(this.wishlistUrl + '/remove-from-wishlist', wishlistObj, {responseType: 'text'});
-  }
-  getBooksFromWishlist(userId): any{
-    return this.http.get<string[]>(this.wishlistUrl + '/getall/' + userId);
-  }
+
 }

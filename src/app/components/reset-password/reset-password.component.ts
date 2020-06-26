@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResetPassword } from 'src/app/model/reset-password';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -12,6 +14,18 @@ export class ResetPasswordComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  ngOnInit() {}
+  public resetPasswordObj = new ResetPassword();
+  constructor(private authService: AuthService) { }
 
+  ngOnInit(): void {
+  }
+  resetPassword(){
+   // console.log(email);
+    this.authService.resetPassword(this.resetPasswordObj).subscribe(data => {
+      console.log(data);
+    });
+    console.log('Password Changed Sucessfully');
+  }
 }
+
+

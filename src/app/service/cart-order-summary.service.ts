@@ -5,7 +5,8 @@ import { HttpService } from './http.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CartPlaceOrderService {
+export class CartOrderSummaryService {
+
   books: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   orderSummaryBooks = this.books.asObservable();
   constructor(public httpService: HttpService) { }

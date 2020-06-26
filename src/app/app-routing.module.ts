@@ -35,9 +35,11 @@ const routes: Routes = [
     path: 'forget-password', component: ForgetPasswordComponent
   },
   {
-    path: 'reset-password', component: ResetPasswordComponent
+    path: 'resetpassword', component: ResetPasswordComponent
   },
-  {path: 'cust', component: CustomerDetailsComponent}
+  {
+    path: 'cust', component: CustomerDetailsComponent
+  }
 
 
 

@@ -9,8 +9,8 @@
         <p class="price-style">Rs.{{ cartBooks.price }}</p>
         <span><button (click)="addItem()">+</button></span>
         <span class="btn-icon">{{ bookQuantity }}</span>
-        <span><button (click)="removeItem(); openSnackBar('Book Remove From Cart Successfull !!!','Remove')">-</button></span>
-        <button class="rem-btn" mat-button (click)="removeFromCart(cartBooks)">
+        <span><button (click)="removeItem()">-</button></span>
+        <button class="rem-btn" mat-button (click)="removeFromCart(cartBooks); openSnackBar('Book Remove From Cart Successfull !!!','Remove')">
           Remove
         </button>
       </div>
@@ -21,8 +21,7 @@
       class="card-btn"
       *ngIf="this.isButtonVisible"
       mat-button
-      (click)="openSnackBar('Place Order Successfull !!!','Submit'); isClicked = true; this.isButtonVisible = false"
-    >
+      (click)="openSnackBar('Place Order Successfull !!!','Submit'); isClicked = true; this.isButtonVisible = false">
       PLACE ORDER
     </button>
   </mat-card>

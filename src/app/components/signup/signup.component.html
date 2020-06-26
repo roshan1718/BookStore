@@ -15,7 +15,7 @@
             <mat-form-field class="field-style">
               <mat-label>Username</mat-label>
               <mat-icon matSuffix>person</mat-icon>
-              <input matInput [(ngModel)] = "signUpObj.username" [formControl]="nameFormControl" [errorStateMatcher]="matcher" />
+              <input matInput [(ngModel)] = "signUpObj.username" />
             </mat-form-field>
           </div>
           <div>
@@ -23,9 +23,6 @@
               <mat-label>Phone Number</mat-label>
               <mat-icon matSuffix>call</mat-icon>
               <input matInput [(ngModel)] = "signUpObj.mobileNumber">
-              <!-- <mat-error *ngIf="numberFormControl.hasError(' MOBILE_PATTERN')">
-                Please enter 10 digit number
-              </mat-error>  -->
             </mat-form-field>
           </div>
           <div>
