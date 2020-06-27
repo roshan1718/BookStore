@@ -11,18 +11,19 @@
 </div>
 
 <div class="books-styles">
-  <div class="card-bet-space" *ngFor="let book of bookArray">
+  <div class="card-bet-space" *ngFor="let book of bookArray ">
     <app-bookcard [book]="book"></app-bookcard>
     <br />
 </div>
 
-<div class="pagination">
+<div (click)= "pageSelect($event)"class="pagination">
   <a class="bs-pagination-style" href="#">&lt;</a>
   <a href="#">1</a>
-  <a class="active" href="#">2</a>
+  <a href="#">2</a>
   <a href="#">3</a>
   <a href="#">4</a>
   <a href="#">5</a>
   <a href="#">6</a>
   <a class="bs-pagination-style" href="#">&gt;</a>
 </div>
+ 

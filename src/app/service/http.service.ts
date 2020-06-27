@@ -23,8 +23,12 @@ export class HttpService {
   addDetails(customerObj): any{
      return this.http.post(this.bookUrl + '/customer-details/add-details', customerObj, this.header);
   }
-  existedDetails(): any{
+  isCustomerExist(){
     return this.http.get(this.bookUrl + '/customer-details/isexisted', this.header);
+  }
+
+  getOrderId(){
+    return this.http.get(this.bookUrl + '/home/cart/order-placed', this.header);
   }
 
 }

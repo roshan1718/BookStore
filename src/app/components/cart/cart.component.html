@@ -20,8 +20,10 @@
     <button
       class="card-btn"
       *ngIf="this.isButtonVisible"
-      mat-button
-      (click)="openSnackBar('Place Order Successfull !!!','Submit'); isClicked = true; this.isButtonVisible = false">
+      mat-button 
+      (click)="openSnackBar('Place Order Successfull !!!','Submit');
+       isClicked = true; this.isButtonVisible = false"  
+       ng-if="isCustomerExist() == true">
       PLACE ORDER
     </button>
   </mat-card>

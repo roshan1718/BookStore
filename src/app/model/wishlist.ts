@@ -1,4 +1,4 @@
 export class Wishlist {
-    constructor(public userId: number, public bookId: number){
+    constructor(public bookId: number){
     }
 }

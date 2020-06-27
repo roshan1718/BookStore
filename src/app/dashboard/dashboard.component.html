@@ -4,7 +4,7 @@
     <mat-icon class="bs-icon-style">menu_book</mat-icon>
     <a routerLink="/" class="bs-label"> <p>Bookstore</p></a>
     <span class="srch-bar-position"></span>
-    <input type="text"class="srch-bar-style" matInput placeholder=" &#xF002; Search..." /> 
+    <input type="text"class="srch-bar-style" [(ngModel)]="searchText" matInput placeholder=" &#xF002; Search..." /> 
     <span class="cart-position"></span>
     <span>Cart</span>
     <a routerLink="/cart">

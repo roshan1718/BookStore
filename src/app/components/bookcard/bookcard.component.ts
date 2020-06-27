@@ -54,12 +54,16 @@ export class BookcardComponent implements OnInit {
 
   addToCart(){
   var cartObj = new Cart(this.book.id, this.bookQuantity);
-  this.httpService.postBook(cartObj, '/home/cart/add-to-cart').subscribe(data => {});
-  console.log('Book added to cart');
+  this.httpService.postBook(cartObj, '/home/cart/add-to-cart').subscribe(data => {
+  });
+  console.log('Book added to cart' );
+  console.log(cartObj);
  }
  addToWishlist(){
-  var cartObj = new Wishlist(this.userId, this.book.id);
-  this.httpService.postBook(cartObj, '/home/wishlist/add-to-wishlist').subscribe(data => {});
+  var cartObj = new Wishlist(this.book.id);
+  this.httpService.postBook(cartObj, '/home/wishlist/add-to-wishlist').subscribe(data => {
+    console.log('data in wishlist', data);
+  });
   console.log('Book added to wishlist');
 }
 }

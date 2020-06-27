@@ -10,6 +10,7 @@ import { AddToWishlistService } from '../service/add-to-wishlist.service';
 export class DashboardComponent implements OnInit {
  cartCount = 0;
  wishCount = 0;
+ searchText;
   constructor(public addToBagService: AddToBagService, public addToWishService: AddToWishlistService) { }
   ngOnInit(): void {
     this.incrementBagCount();

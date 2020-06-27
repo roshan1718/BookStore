@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
   books = [];
   userId = 1;
   bookQuantity = 1;
+  isExist;
 
   constructor(public cartOrderSummaryService: CartOrderSummaryService, private snackBar: MatSnackBar,
               public httpService: HttpService, public sanitizer: DomSanitizer) { }
@@ -27,7 +28,6 @@ export class CartComponent implements OnInit {
     this.isClicked = false;
     this.getBooksFromCart();
   }
-
   openSnackBar(message: string, action: string) {
      this.snackBar.open(message, action, {
         duration: 2000,
@@ -67,6 +67,13 @@ export class CartComponent implements OnInit {
     this.httpService.postBook(cartObj, '/home/cart/remove-from-cart').subscribe(data => {
      this.getBooksFromCart();
     });
-   // console.log('Book removed from cart');
+   }
+
+  isCustomerExist(){
+    if ( this.isExist === true){
+    this.httpService.isCustomerExist().subscribe(data => {
+      console.log(data);
+    });
+  }
   }
 }

@@ -9,18 +9,24 @@ import { HttpService } from 'src/app/service/http.service';
 export class GetBookDetailsComponent implements OnInit {
   bookArray = [];
   image: string;
-
   constructor(private httpservice: HttpService) { }
 
     ngOnInit(): void {
-      this.getBooks();
+      this.getBooks(0);
     }
+    pageSelect(event){
+      console.log('you are in next page', event.srcElement.innerHTML );
+      this.getBooks(event.srcElement.innerHTML);
 
-    public getBooks(){
-      this.httpservice.getCall('/book-store/home').subscribe(data => {
-        this.bookArray = data;
-        });
     }
+    public getBooks(pageNumber ){
+      this.httpservice.getCall('/book-store/home' + '?page=' + pageNumber + '&size=12'
+      ).subscribe(data => {
+        console.log(data);
+        this.bookArray = data.content;
+
+        });
+      }
 
     sort(order){
       switch (order.target.value) {
@@ -47,4 +53,5 @@ export class GetBookDetailsComponent implements OnInit {
           }
         }
     }
+
 }

@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule  ({
     imports : [ MatToolbarModule,
@@ -28,7 +28,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
                 ReactiveFormsModule,
                 MatBadgeModule,
                 MatDividerModule,
-                MatSnackBarModule
+                MatSnackBarModule,
+                Ng2SearchPipeModule
+
             ],
     exports : [  MatToolbarModule,
                 MatIconModule,
@@ -43,7 +45,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
                 ReactiveFormsModule,
                 MatBadgeModule,
                 MatDividerModule,
-                MatSnackBarModule
+                MatSnackBarModule,
+                Ng2SearchPipeModule
             ]
 })
 
