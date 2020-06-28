@@ -44,7 +44,7 @@ export class CustomerDetailsComponent implements OnInit {
     });
   }
   addDetails(){
-    this.httpService.addDetails(this.customerObj).subscribe(data => {
+    this.httpService.postBook(this.customerObj, '/customer-details/add-details').subscribe(data => {
       console.log(data);
     });
   }

@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class HttpService {
+
   bookUrl = environment.baseUrl;
   header = {headers: new HttpHeaders().set('token', localStorage.getItem('token'))};
 
@@ -15,21 +16,9 @@ export class HttpService {
     return this.http.get(this.bookUrl + url);
   }
   getAllBooks(url): any{
-    return this.http.get<string[]>(this.bookUrl + url, this.header);
+    return this.http.get(this.bookUrl + url, this.header);
   }
   postBook(cartObj, url): any{
     return this.http.post(this.bookUrl + url, cartObj, this.header);
   }
-
-  addDetails(customerObj): any{
-     return this.http.post(this.bookUrl + '/customer-details/add-details', customerObj, this.header);
-  }
-  isCustomerExist(){
-    return this.http.get(this.bookUrl + '/customer-details/isexisted', this.header);
-  }
-
-  getOrderId(){
-    return this.http.get(this.bookUrl + '/home/cart/order-placed', this.header);
-  }
-
 }

@@ -69,11 +69,8 @@ export class CartComponent implements OnInit {
   }
 
   isCustomerExist() {
-    this.httpService.isCustomerExist().subscribe(data => {
-      console.log("isexit.......", data);
+    this.httpService.getAllBooks('/customer-details/isexisted').subscribe(data => {
       this.isExist = data;
-      console.log(this.isExist);
-
     });
   }
 }

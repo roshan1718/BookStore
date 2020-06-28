@@ -14,7 +14,7 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   getOrderId() {
-    this.httService.getOrderId().subscribe(data => {
+    this.httService.getAllBooks('/home/cart/order-placed').subscribe(data => {
       this.orderId = data;
     });
   }
