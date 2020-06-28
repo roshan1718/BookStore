@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
   loginUser(){
     this.authService.loginUser(this.signInObj).subscribe(data => {
-      console.log(data);
+     localStorage.setItem('token', data.accessToken);
+     console.log(data);
     });
-    console.log('Login User');
   }
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
