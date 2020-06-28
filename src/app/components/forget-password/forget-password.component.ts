@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { ForgotPassword } from 'src/app/model/forgot-password';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-forget-password',
@@ -10,7 +11,7 @@ import { ForgotPassword } from 'src/app/model/forgot-password';
 export class ForgetPasswordComponent implements OnInit {
   public forgotPasswordObj = new ForgotPassword();
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
   ngOnInit(): void {
   }
   forgotPassword(email){
@@ -18,7 +19,11 @@ export class ForgetPasswordComponent implements OnInit {
     this.authService.forgotPassword(email).subscribe(data => {
       console.log(data);
     });
-    console.log('Token is sent on your Mail');
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+       duration: 2000,
+    });
   }
 
 }

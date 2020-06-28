@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 export class HttpService {
   bookUrl = environment.baseUrl;
   header = {headers: new HttpHeaders().set('token', localStorage.getItem('token'))};
+ // window.localStorage.setItem(key, value);
   constructor(private http: HttpClient) { }
 
   getCall(url): any{

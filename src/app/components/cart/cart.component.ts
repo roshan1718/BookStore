@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
 import { Cart } from 'src/app/model/cart';
 import { DomSanitizer } from '@angular/platform-browser';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartOrderSummaryService } from 'src/app/service/cart-order-summary.service';
-import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-cart',
@@ -29,9 +28,9 @@ export class CartComponent implements OnInit {
     this.getBooksFromCart();
   }
   openSnackBar(message: string, action: string) {
-     this.snackBar.open(message, action, {
-        duration: 2000,
-     });
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
   getImageUrl(book) {
     this.imageUrl = book.image;
@@ -53,8 +52,8 @@ export class CartComponent implements OnInit {
       this.bookQuantity = this.bookQuantity;
     }
   }
-  getBooksFromCart(){
-    this.httpService.getAllBooks( '/home/cart/getall/').subscribe(data => {
+  getBooksFromCart() {
+    this.httpService.getAllBooks('/home/cart/getall/').subscribe(data => {
       this.books = data;
 
       this.cartOrderSummaryService.getBooksFromCart(this.books);
@@ -62,18 +61,19 @@ export class CartComponent implements OnInit {
     });
   }
 
-  removeFromCart(book){
+  removeFromCart(book) {
     var cartObj = new Cart(book.id, this.bookQuantity);
     this.httpService.postBook(cartObj, '/home/cart/remove-from-cart').subscribe(data => {
-     this.getBooksFromCart();
-    });
-   }
-
-  isCustomerExist(){
-    if ( this.isExist === true){
-    this.httpService.isCustomerExist().subscribe(data => {
-      console.log(data);
+      this.getBooksFromCart();
     });
   }
+
+  isCustomerExist() {
+    this.httpService.isCustomerExist().subscribe(data => {
+      console.log("isexit.......", data);
+      this.isExist = data;
+      console.log(this.isExist);
+
+    });
   }
 }

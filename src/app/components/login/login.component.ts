@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { SignIn } from 'src/app/model/sign-in';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   roles: string[] = [];
- constructor(private authService: AuthService) { }
+ constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
   public signInObj = new SignIn();
   ngOnInit() {}
   loginUser(){
@@ -22,5 +23,10 @@ export class LoginComponent implements OnInit {
     });
     console.log('Login User');
   }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+       duration: 2000,
+    });
+ }
 
 }

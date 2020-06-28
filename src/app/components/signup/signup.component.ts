@@ -3,6 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { SignUp } from 'src/app/model/sign-up';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
   EMAIL_PATTERN = /^[a-zA-Z0-9]{1,}([.\_\+\-]?[a-zA-Z0-9]{1,})?[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]?[a-z]{2})?$/;
   hide = true;
   public signUpObj = new SignUp();
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(this.EMAIL_PATTERN),
@@ -32,6 +33,10 @@ registerUser(){
   this.authService.registerUser(this.signUpObj).subscribe(data => {
     console.log(data);
   });
-  console.log("Register successfully");
+}
+openSnackBar(message: string, action: string) {
+  this.snackBar.open(message, action, {
+     duration: 2000,
+  });
 }
 }

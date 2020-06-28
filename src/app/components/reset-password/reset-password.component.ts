@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResetPassword } from 'src/app/model/reset-password';
 import { AuthService } from 'src/app/service/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-reset-password',
@@ -15,16 +16,20 @@ export class ResetPasswordComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   public resetPasswordObj = new ResetPassword();
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
   resetPassword(){
-   // console.log(email);
     this.authService.resetPassword(this.resetPasswordObj).subscribe(data => {
       console.log(data);
     });
     console.log('Password Changed Sucessfully');
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+       duration: 2000,
+    });
   }
 }
 

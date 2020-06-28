@@ -13,10 +13,9 @@ export class PlaceOrderComponent implements OnInit {
     this.getOrderId();
   }
 
-getOrderId(){
-  this.httService.getOrderId().subscribe(data => {
-  this.orderId = data;
-  });
-
-}
+  getOrderId() {
+    this.httService.getOrderId().subscribe(data => {
+      this.orderId = data;
+    });
+  }
 }

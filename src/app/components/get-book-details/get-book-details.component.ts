@@ -24,7 +24,6 @@ export class GetBookDetailsComponent implements OnInit {
       ).subscribe(data => {
         console.log(data);
         this.bookArray = data.content;
-
         });
       }
 

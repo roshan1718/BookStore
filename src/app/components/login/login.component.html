@@ -31,7 +31,9 @@
         <mat-card-actions>
           <div class="button-margin">
             <div class="button-style">
-              <button class="login-btn" mat-button (click)="loginUser()">Login</button>
+              <a routerLink="/">
+              <button class="login-btn" mat-button (click)="loginUser(); openSnackBar('User Login Successfull !!!','Submit');">Login</button>
+              </a>
               <a routerLink="/signup">
                 <button class="signup-btn" mat-button>Signup</button>
               </a>

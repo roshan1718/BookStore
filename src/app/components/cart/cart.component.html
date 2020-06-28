@@ -22,11 +22,14 @@
       *ngIf="this.isButtonVisible"
       mat-button 
       (click)="openSnackBar('Place Order Successfull !!!','Submit');
-       isClicked = true; this.isButtonVisible = false"  
-       ng-if="isCustomerExist() == true">
+      this.isButtonVisible = false"  
+       (click)="isCustomerExist()">
       PLACE ORDER
     </button>
   </mat-card>
 </div>
 <br />
-<app-customer-details *ngIf="isClicked"></app-customer-details>
+<div *ngIf= "isExist == false" >
+<app-customer-details ></app-customer-details></div>
+
+<app-order-summary ></app-order-summary> 
