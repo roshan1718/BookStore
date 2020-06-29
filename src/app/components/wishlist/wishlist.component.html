@@ -1,6 +1,10 @@
 <div>
   <mat-card class="mat-card">
     <p class="card-style">WishList({{ books?.length }})</p>
+    <div *ngIf="!books || books?.length === 0">
+      <p class="bs-msg">You`re Wishlist is Empty...!!!</p>
+    </div>
+    <div *ngIf="books || books?.length > 0">
     <div *ngFor="let wishlistBooks of books">
       <img class="card-img" [src]="getImageUrl(wishlistBooks)" />
       <div class="card-data">
@@ -21,6 +25,7 @@
       </div>
       <mat-divider></mat-divider>
     </div>
+  </div>
     <br />
   </mat-card>
 </div>

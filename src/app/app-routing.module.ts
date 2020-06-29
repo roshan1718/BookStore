@@ -22,7 +22,6 @@ const routes: Routes = [
     {path: 'cart', component: CartComponent},
     {path: 'success', component: PlaceOrderComponent},
     {path: 'wishlist', component: WishlistComponent},
-    { path: '**', component: Four04ComponentComponent}
     ]
   },
   {
@@ -44,7 +43,8 @@ const routes: Routes = [
   },
   {
     path: 'cust', component: CustomerDetailsComponent
-  }
+  },
+  { path: '**', component: Four04ComponentComponent}
 
 
 
