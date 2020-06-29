@@ -18,6 +18,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { Four04ComponentComponent } from './components/four04-component/four04-component.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     ForgetPasswordComponent,
     WishlistComponent,
     ResetPasswordComponent,
+    Four04ComponentComponent,
 
   ],
   imports: [

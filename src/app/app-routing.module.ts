@@ -11,6 +11,10 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { Four04ComponentComponent } from './components/four04-component/four04-component.component';
+
+
+import { from } from 'rxjs';
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
@@ -18,6 +22,7 @@ const routes: Routes = [
     {path: 'cart', component: CartComponent},
     {path: 'success', component: PlaceOrderComponent},
     {path: 'wishlist', component: WishlistComponent},
+    { path: '**', component: Four04ComponentComponent}
     ]
   },
   {

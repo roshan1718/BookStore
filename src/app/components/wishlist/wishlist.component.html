@@ -13,7 +13,8 @@
             (click)="removeFromWishList(wishlistBooks); openSnackBar('Book Reomve From Wishlist !!!','Remove')"
             mat-button>REMOVE
           </button>
-            <button class="addcard-btn"(click)=" addToCart(wishlistBooks); openSnackBar('Book Added To Cart !!!','Submit')"
+            <button class="addcard-btn"(click)="incrementBagCnt(); addToCart(wishlistBooks); openSnackBar('Book Added To Cart !!!','Submit')"
+        
             mat-button>Add to Cart
             </button>
         </div>
