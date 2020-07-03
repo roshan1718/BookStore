@@ -34,9 +34,7 @@
 
 .pagination {
   display: flex;
-  padding-left: 30%;
-  padding-right: 40%;
-  padding-bottom: 2%;
+  margin-left: 3%;
 }
 .pagination a {
   color: black;
@@ -49,9 +47,12 @@
   color: white;
 }
 .pagination a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: brown;
 }
 .bs-pagination-style{
   border-radius: 47%;
   background-color: white;
+}
+.active {
+  background-color: brown;
 }

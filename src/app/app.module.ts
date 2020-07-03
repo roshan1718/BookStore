@@ -19,6 +19,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { Four04ComponentComponent } from './components/four04-component/four04-component.component';
+import { ActivateGuard } from './activate.guard';
+import { UserService } from './service/user.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { Four04ComponentComponent } from './components/four04-component/four04-c
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ActivateGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

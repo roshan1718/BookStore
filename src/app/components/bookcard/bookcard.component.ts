@@ -44,7 +44,7 @@ export class BookcardComponent implements OnInit {
     }
   }
   incrementBagCnt() {
-    this.addToBag.incrementBagCnt();
+    this.addToBag.getCartBook();
     this.isDisabled = true;
   }
   incrementWishlistCnt() {

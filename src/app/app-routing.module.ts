@@ -12,21 +12,19 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { Four04ComponentComponent } from './components/four04-component/four04-component.component';
-
-
-import { from } from 'rxjs';
+import { ActivateGuard } from './activate.guard';
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children: [{path: '', component: GetBookDetailsComponent},
-    {path: 'cart', component: CartComponent},
-    {path: 'success', component: PlaceOrderComponent},
-    {path: 'wishlist', component: WishlistComponent},
+    {path: 'cart', component: CartComponent, canActivate: [ActivateGuard]},
+    {path: 'success', component: PlaceOrderComponent, canActivate: [ActivateGuard]},
+    {path: 'wishlist', component: WishlistComponent, canActivate: [ActivateGuard]},
     ]
   },
   {
     path: 'cart', component: CartComponent,
-    children: [{path: 'cart', component: CustomerDetailsComponent,
+    children: [{path: 'cart', component: CustomerDetailsComponent, canActivate: [ActivateGuard],
     children: [{path: 'cart', component: OrderSummaryComponent}] }]
   },
   {
@@ -41,14 +39,8 @@ const routes: Routes = [
   {
     path: 'resetpassword', component: ResetPasswordComponent
   },
-  {
-    path: 'cust', component: CustomerDetailsComponent
-  },
+
   { path: '**', component: Four04ComponentComponent}
-
-
-
-
 
 ];
 

@@ -9,21 +9,42 @@ import { HttpService } from 'src/app/service/http.service';
 export class GetBookDetailsComponent implements OnInit {
   bookArray = [];
   image: string;
+  page ;
+  pages: Array<number>;
+  totalPages;
+  previous;
+  next;
+  current;
   constructor(private httpservice: HttpService) { }
 
     ngOnInit(): void {
       this.getBooks(0);
     }
-    pageSelect(event){
-      console.log('you are in next page', event.srcElement.innerHTML );
-      this.getBooks(event.srcElement.innerHTML);
+  
 
+    pageSelect(i, event){
+      console.log("I>>>", i);
+      this.page = i;
+      event.preventDefault();
+      this.current = event.srcElement.innerHTML;
+      console.log('current page', this.current);
+      this.getBooks(event.srcElement.innerHTML);
     }
-    public getBooks(pageNumber ){
-      this.httpservice.getCall('/book-store/home' + '?page=' + pageNumber + '&size=12'
-      ).subscribe(data => {
-        console.log(data);
+
+    previousPage()
+    {
+      this.previous = --this.current;
+      console.log('PREVIOUS ', this.previous);
+    }
+    nextPage(){
+     this.next = ++this.current ;
+      console.log('NEXT: ', this.next);
+    }
+    public getBooks(pageNumber){
+      this.httpservice.getCall('/book-store/home' + '?page=' + (pageNumber - 1) + '&size=12'
+      ).subscribe(data  => {
         this.bookArray = data.content;
+        this.pages = new Array(data.totalPages);
         });
       }
 
@@ -52,5 +73,4 @@ export class GetBookDetailsComponent implements OnInit {
           }
         }
     }
-
 }

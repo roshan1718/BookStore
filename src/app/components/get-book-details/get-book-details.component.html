@@ -16,14 +16,11 @@
     <br />
 </div>
 
-<div (click)= "pageSelect($event)"class="pagination">
-  <a class="bs-pagination-style" href="#">&lt;</a>
-  <a href="#">1</a>
-  <a href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a class="bs-pagination-style" href="#">&gt;</a>
+<div class="pagination">
+<a href=""(click)= "previousPage()">&lt;</a>
+<div class = "pagination" *ngFor="let page of pages; let i = index">  
+  <a href="" (click)="pageSelect(i, $event)" 
+  [ngClass] = "{'active':i==page}">{{i+1}}</a>
 </div>
- 
+<a href="" (click)="nextPage()">&gt;</a>
+</div>

@@ -2,7 +2,7 @@
 <mat-toolbar class="toolbar-style">
   <mat-toolbar-row>
     <mat-icon class="bs-icon-style">menu_book</mat-icon>
-    <a routerLink="/" class="bs-label"> <p>Bookstore</p></a>
+    <a routerLink="/"routerLinkActive="Active" class="bs-label"> <p>Bookstore</p></a>
     <span class="srch-bar-position"></span>
     <input type="text"class="srch-bar-style" [(ngModel)]="searchText" matInput placeholder=" &#xF002; Search..." /> 
     <span class="cart-position"></span>
@@ -16,12 +16,15 @@
     <a routerLink="/wishlist">
       <mat-icon matBadge= {{wishCount}} matBadgeSize="small"class="cart-icon-style">
         favorite_border</mat-icon>
-    </a>
-    <span class="wish-space"></span>
-    <a routerLink="/login">
-      <mat-icon class="cart-icon-style">
-      account_circle</mat-icon>
-    </a>
+      </a>
+    <div *ngIf="isLogIn == false ">
+      <span class="wish-space"></span>
+      <a routerLink="/login" (click) = "isLogIn = true" >
+        <mat-icon class="cart-icon-style">
+        account_circle</mat-icon>
+      </a>
+    </div>
+    <div *ngIf="isLogIn == true "><button class="bs-logout"(click) = "logOut()">Logout</button></div>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="navbar-style">
