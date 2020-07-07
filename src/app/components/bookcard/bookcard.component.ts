@@ -48,7 +48,7 @@ export class BookcardComponent implements OnInit {
     this.isDisabled = true;
   }
   incrementWishlistCnt() {
-    this.addToWish.incrementWishlistCnt();
+    this.addToWish.getwishlistBook();
     this.isDisabled = true;
   }
 

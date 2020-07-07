@@ -1,6 +1,6 @@
 .cust-mat-card {
-  width: 96%;
-  margin-left: 2%;
+  width: 53%;
+  margin-left: 10%;
   margin-bottom: 2%;
   border-radius: 1%;
   background-color: white;
@@ -8,6 +8,14 @@
   border: rgb(184, 184, 184) 1px solid;
   transition: none !important;
   box-shadow: none !important;
+}
+@media (max-width: 768px) {
+  .cust-mat-card {
+    width: 53%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    border-radius: 1%;
+  }
 }
 .title-style {
   font-size: 110%;
@@ -23,23 +31,59 @@
   margin-left: 2%;
   width: 30%;
 }
+@media (max-width: 500px) {
+  .cust-field {
+    margin-left: 0%;
+    width: 48%;
+  }
+}
 .filed-full-wid {
   width: 62%;
 }
+@media (max-width: 500px) {
+  .filed-full-wid {
+    width: 95%;
+  }
+}
+
 .fill-wid {
   width: 30%;
+}
+@media (max-width: 500px) {
+  .fill-wid {
+    width: 48%;
+  }
 }
 .cust-add-field {
   width: 62%;
 }
+@media (max-width: 500px) {
+  .cust-add-field {
+  width: 95%;
+}
+}
 .spec-bottom {
   margin-bottom: 5%;
 }
-.cust-btn {
-  margin-left: 80%;
-  color: white;
-  background-color: rgb(45, 125, 206);
+@media (max-width: 500px) {
+  .spec-bottom {
+    margin-bottom: 0%;
+  }
 }
 .radio-btn {
   margin-left: 2%;
 }
+.cust-btn {
+  margin-left: 70%;
+  color: white;
+  background-color: rgb(45, 125, 206);
+}
+@media (max-width: 500px) {
+  .cust-btn {
+    margin-left: 0%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+
+

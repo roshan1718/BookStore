@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  header = {headers: new HttpHeaders().set('token', localStorage.getItem('email'))};
+  header = {headers: new HttpHeaders().set('token', localStorage.getItem('token'))};
 
   authUrl = environment.authUrl;
   constructor(private http: HttpClient) { }

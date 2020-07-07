@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
+import { flatten } from '@angular/compiler';
 
 @Component({
   selector: 'app-get-book-details',
@@ -9,68 +10,68 @@ import { HttpService } from 'src/app/service/http.service';
 export class GetBookDetailsComponent implements OnInit {
   bookArray = [];
   image: string;
-  page ;
+  page;
   pages: Array<number>;
   totalPages;
-  previous;
-  next;
+  isDisabled: boolean;
+  active: boolean;
   current;
+  next: boolean;
+  loading = true;
   constructor(private httpservice: HttpService) { }
 
-    ngOnInit(): void {
-      this.getBooks(0);
-    }
-  
+  ngOnInit(): void {
+    this.getBooks(0);
+  }
 
-    pageSelect(i, event){
-      console.log("I>>>", i);
-      this.page = i;
-      event.preventDefault();
-      this.current = event.srcElement.innerHTML;
-      console.log('current page', this.current);
-      this.getBooks(event.srcElement.innerHTML);
-    }
+  pageSelect(i) {
+    this.page = i;
+    event.preventDefault();
+    this.current = i;
+    this.getBooks(this.page);
+}
+  previousPage() {
+    this.page = --this.current;
+    this.getBooks(this.page);
+  }
 
-    previousPage()
-    {
-      this.previous = --this.current;
-      console.log('PREVIOUS ', this.previous);
-    }
-    nextPage(){
-     this.next = ++this.current ;
-      console.log('NEXT: ', this.next);
-    }
-    public getBooks(pageNumber){
-      this.httpservice.getCall('/book-store/home' + '?page=' + (pageNumber - 1) + '&size=12'
-      ).subscribe(data  => {
-        this.bookArray = data.content;
-        this.pages = new Array(data.totalPages);
+  nextPage() {
+    console.log("total pages", this.totalPages);
+      this.page = ++this.current;
+      this.getBooks(this.page);
+  }
+
+  public getBooks(pageNumber) {
+    this.loading = true;
+    this.httpservice.getCall('/book-store/home' + '?page=' + (pageNumber) + '&size=12'
+    ).subscribe(data => {
+      this.bookArray = data.content;
+      this.totalPages = data.totalPages;
+      this.pages = new Array(data.totalPages);
+      this.loading = false;
+    });
+  }
+
+  sort(order) {
+    switch (order.target.value) {
+      case 'Low': {
+        this.httpservice.getCall('/book-store/sort/price-ascending').subscribe(data => {
+          this.bookArray = data.content;
         });
+        break;
       }
-
-    sort(order){
-      switch (order.target.value) {
-          case 'Low' : {
-              this.httpservice.getCall('/book-store/sort/price-ascending').subscribe(data => {
-               this.bookArray = data.content;
-               console.log(this.bookArray);
-               });
-              break;
-          }
-          case 'High': {
-            this.httpservice.getCall('/book-store/sort/price-descending').subscribe(data => {
-              this.bookArray = data.content;
-              console.log(this.bookArray);
-             });
-            break;
-          }
-          case 'NewArrival': {
-            this.httpservice.getCall('/book-store/sort/newest-arrival').subscribe(data => {
-              this.bookArray = data.content;
-              console.log(this.bookArray);
-             });
-            break;
-          }
-        }
+      case 'High': {
+        this.httpservice.getCall('/book-store/sort/price-descending').subscribe(data => {
+          this.bookArray = data.content;
+        });
+        break;
+      }
+      case 'NewArrival': {
+        this.httpservice.getCall('/book-store/sort/newest-arrival').subscribe(data => {
+          this.bookArray = data.content;
+        });
+        break;
+      }
     }
+  }
 }

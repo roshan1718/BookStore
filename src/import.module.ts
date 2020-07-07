@@ -11,8 +11,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule  ({
     imports : [ MatToolbarModule,
@@ -29,7 +30,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
                 MatBadgeModule,
                 MatDividerModule,
                 MatSnackBarModule,
-                Ng2SearchPipeModule
+                Ng2SearchPipeModule,
+                MatTableModule
 
             ],
     exports : [  MatToolbarModule,
@@ -46,7 +48,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
                 MatBadgeModule,
                 MatDividerModule,
                 MatSnackBarModule,
-                Ng2SearchPipeModule
+                Ng2SearchPipeModule,
+                MatTableModule
             ]
 })
 

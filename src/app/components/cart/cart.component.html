@@ -1,4 +1,9 @@
-<div>
+<div class="loading-sp" *ngIf="loading">
+  <img 
+    src="assets/Reload-0.8s-200px .gif"
+  />
+</div>
+<div *ngIf="loading == false">
   <mat-card class="mat-card">
     <p class="card-style">My Cart ({{ books?.length }})</p>
     <div *ngIf="!books || books?.length === 0">
@@ -34,17 +39,16 @@
       mat-button
       (click)="
         openSnackBar('Place Order Successfull !!!', 'Submit');
-        this.isButtonVisible = false
-      "
+        this.isButtonVisible = false"
       (click)="isCustomerExist()"
     >
       PLACE ORDER
     </button>
   </mat-card>
-</div>
 <br />
 <div *ngIf="isExist == false">
   <app-customer-details></app-customer-details>
 </div>
 
 <app-order-summary></app-order-summary>
+</div>

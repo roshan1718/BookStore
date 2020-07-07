@@ -17,18 +17,19 @@ export class WishlistComponent implements OnInit {
   userId = 1;
   bookQuantity = 1;
   imageUrl: string;
+  loading = true;
   constructor(public addToBag: AddToBagService, private snackBar: MatSnackBar, private router: Router,
               public httpService: HttpService, public sanitizer: DomSanitizer) { }
 
-  ngOnInit(){
-   this. logincheck();
+  ngOnInit() {
+    this.logincheck();
   }
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-     duration: 2000,
+      duration: 2000,
     });
- }
+  }
   getImageUrl(book) {
     this.imageUrl = book.image;
     if (this.imageUrl != null) {
@@ -40,31 +41,37 @@ export class WishlistComponent implements OnInit {
     let key = localStorage.getItem('token');
     console.log('generated key ', key);
     if (key === null) {
-       alert('you dont have permission to view this page, go to login');
-       this.router.navigate(['login']);
+      alert('you dont have permission to view this page, go to login');
+      this.router.navigate(['login']);
     }
     else {
-      this.getBooksFromWishlist(this.userId);    }
+      this.getBooksFromWishlist(this.userId);
+    }
   }
   getBooksFromWishlist(userId) {
+    this.loading = true;
     this.httpService.getAllBooks('/home/wishlist/get-all/').subscribe(data => {
       this.books = data;
+      this.loading = false;
       this.userId = userId;
     });
   }
   removeFromWishList(book) {
+    this.loading = true;
     var cartObj = new Wishlist(book.id);
     this.httpService.postBook(cartObj, '/home/wishlist/remove-from-wishlist').subscribe(data => {
+      this.loading = false;
       this.getBooksFromWishlist(this.userId);
     });
-   }
+  }
   addToCart(book) {
-      var cartObj = new Cart(book.id, this.bookQuantity);
-      this.httpService.postBook(cartObj, '/home/cart/add-to-cart').subscribe(data => {
-      });
-   }
-   incrementBagCnt() {
+    this.loading = true;
+    var cartObj = new Cart(book.id, this.bookQuantity);
+    this.httpService.postBook(cartObj, '/home/cart/add-to-cart').subscribe(data => {
+      this.loading = false;
+    });
+  }
+  incrementBagCnt() {
     this.addToBag.getCartBook();
   }
-
 }

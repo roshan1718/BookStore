@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
   bookQuantity = 1;
   isExist;
   total;
-
+  loading = true;
   constructor(public cartOrderSummaryService: CartOrderSummaryService, private snackBar: MatSnackBar,
               public httpService: HttpService, public sanitizer: DomSanitizer, private router: Router) { }
 
@@ -81,20 +81,26 @@ export class CartComponent implements OnInit {
     }
   }
   getBooksFromCart() {
+    this.loading = true;
     this.httpService.getAllBooks('/home/cart/getall/').subscribe(data => {
       this.books = data;
+      this.loading = false;
       this.cartOrderSummaryService.getBooksFromCart(this.books);
     });
   }
   removeFromCart(book) {
+    this.loading = true;
     const cartObj = new Cart(book.id, this.bookQuantity);
     this.httpService.postBook(cartObj, '/home/cart/remove-from-cart').subscribe(data => {
+      this.loading = false;
       this.getBooksFromCart();
     });
   }
 
   isCustomerExist() {
+    this.loading = true;
     this.httpService.getAllBooks('/customer-details/isexisted').subscribe(data => {
+      this.loading = false;
       this.isExist = data;
     });
   }

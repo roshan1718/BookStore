@@ -22,8 +22,8 @@ export class ResetPasswordComponent implements OnInit {
   }
   resetPassword(){
     this.authService.resetPassword(this.resetPasswordObj).subscribe(data => {
-    // localStorage.setItem('email', data.accessToken);
-     console.log(data);
+    localStorage.setItem('token', data.accessToken);
+    console.log(data);
     });
     console.log('Password Changed Sucessfully');
   }
@@ -33,5 +33,3 @@ export class ResetPasswordComponent implements OnInit {
     });
   }
 }
-
-

@@ -40,18 +40,19 @@ incrementBagCount(){
 }
 
 incrementWishlistCount(){
+  this.addToWishService.getwishlistBook();
   this.addToWishService.count.subscribe(counts => {
     this.wishCount = counts;
   });
-  this.wishCount = this.wishCount[0];
 }
-// searchBooks(searchtext){
-//    console.log("Search text: ", searchtext);
-//    this.searchKeyService.searchBook(searchtext);
 
-// }
 logOut(){
   localStorage.removeItem('token');
   this.isLogIn = false ;
 }
+// searchBooks(searchtext){
+//    console.log("Search text: ", searchtext);
+//    this.searchKeyService.searchBook(searchtext);
+// }
+
 }
