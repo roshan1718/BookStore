@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.font{
+  font: 15px Arial, sans-serif;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
 //toolbar
 .dashboard-style {
   display: flex;
@@ -17,7 +23,6 @@
 .toolbar-style {
   background-color: rgb(141, 19, 19);
   color: white;
-  font: 15px Arial, sans-serif;
   height: 20%;
 }
 @media (max-width: 500px) {
@@ -67,7 +72,7 @@
 }
 .bs-log {
   margin-left: 4px;
-  font-size: 100%;
+  font-size: 120%;
   color: white;
   border: none;
   background-color: rgb(141, 19, 19);
@@ -94,7 +99,6 @@
   background-color: rgb(59, 12, 12);
   color: white;
   height: 50px;
-  font: 15px Arial, sans-serif;
 }
 .bs-footer-style {
   margin-left: 9%;

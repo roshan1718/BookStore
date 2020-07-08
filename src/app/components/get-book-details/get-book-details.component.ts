@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
-import { flatten } from '@angular/compiler';
 
 @Component({
   selector: 'app-get-book-details',
@@ -13,10 +12,8 @@ export class GetBookDetailsComponent implements OnInit {
   page;
   pages: Array<number>;
   totalPages;
-  isDisabled: boolean;
   active: boolean;
   current;
-  next: boolean;
   loading = true;
   constructor(private httpservice: HttpService) { }
 
@@ -36,9 +33,8 @@ export class GetBookDetailsComponent implements OnInit {
   }
 
   nextPage() {
-    console.log("total pages", this.totalPages);
-      this.page = ++this.current;
-      this.getBooks(this.page);
+    this.page = ++this.current;
+    this.getBooks(this.page);
   }
 
   public getBooks(pageNumber) {

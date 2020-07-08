@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OrderSummaryComponent } from './order-summary.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('OrderSummaryComponent', () => {
   let component: OrderSummaryComponent;
@@ -8,7 +10,9 @@ describe('OrderSummaryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrderSummaryComponent ]
+      declarations: [ OrderSummaryComponent ],
+      imports: [HttpClientTestingModule, MatSnackBarModule],
+
     })
     .compileComponents();
   }));

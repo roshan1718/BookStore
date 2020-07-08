@@ -47,7 +47,7 @@ import { UserService } from './service/user.service';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [ActivateGuard, UserService],
+  providers: [ ActivateGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

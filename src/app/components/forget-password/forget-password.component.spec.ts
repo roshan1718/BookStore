@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ForgetPasswordComponent } from './forget-password.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ForgetPasswordComponent', () => {
   let component: ForgetPasswordComponent;
@@ -8,7 +10,9 @@ describe('ForgetPasswordComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ForgetPasswordComponent ]
+      declarations: [ ForgetPasswordComponent ],
+      imports: [HttpClientTestingModule, MatSnackBarModule],
+
     })
     .compileComponents();
   }));

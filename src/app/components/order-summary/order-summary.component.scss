@@ -1,10 +1,8 @@
 .mat-card {
   width: 50%;
   margin-left: 10%;
+  margin-bottom: 2%;
   border: rgb(184, 184, 184) 1px solid;
-  transition: none !important;
-  box-shadow: none !important;
-  font: 15px Arial, sans-serif;
 }
 @media (max-width: 768px) {
   .mat-card {
@@ -12,7 +10,7 @@
   }
 }
 .card-img {
-  margin-top: 2%;
+  margin-top: 4%;
   max-height: 130px;
 }
 @media (max-width: 500px) {

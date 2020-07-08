@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor() { }
-  isLoginRights(): boolean{
+  isLoginRights(): boolean {
     let key = localStorage.getItem('token');
     console.log('generated key ', key);
     if (key === null) {
-    return false;
+      return false;
+    }
+    else {
+      return true;
+    }
   }
-  else{
-    return true;
-  }
-}
 }

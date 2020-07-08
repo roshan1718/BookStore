@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class OrderSummaryComponent implements OnInit {
   cartBooks = [];
   totalPrice = [];
+  totalQuantity = [];
   imageUrl: string;
 
   constructor(public cartOrderSummaryService: CartOrderSummaryService, public sanitizer: DomSanitizer, private snackBar: MatSnackBar) { }
@@ -19,6 +20,7 @@ export class OrderSummaryComponent implements OnInit {
       this.cartBooks = data;
     });
     this. getTotalPrice();
+    this.getTotalQuantity();
   }
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
@@ -35,6 +37,11 @@ export class OrderSummaryComponent implements OnInit {
   getTotalPrice() {
     this.cartOrderSummaryService.orderSummaryPrice.subscribe(data => {
       this.totalPrice = data;
+    });
+  }
+  getTotalQuantity() {
+    this.cartOrderSummaryService.orderSummaryQuantity.subscribe(data => {
+      this.totalQuantity = data;
     });
   }
 }

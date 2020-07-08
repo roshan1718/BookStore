@@ -2,18 +2,10 @@
   width: 50%;
   margin-left: 10%;
   border: rgb(184, 184, 184) 1px  solid; 
-  transition: none !important;
-  box-shadow: none !important;
-  font: 15px Arial, sans-serif;
 }
 @media (max-width:768px){
 .mat-card{
-  width: 40%;
-  margin-left: 10%;
-  border: rgb(184, 184, 184) 1px  solid; 
-  transition: none !important;
-  box-shadow: none !important;
-  font: 15px Arial, sans-serif;
+  width: 40%; 
 }}
 .card-img{
   margin-top: 2%;

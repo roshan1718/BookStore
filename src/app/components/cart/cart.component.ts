@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
   isExist;
   total;
   loading = true;
+  totalQuantity ;
   constructor(public cartOrderSummaryService: CartOrderSummaryService, private snackBar: MatSnackBar,
               public httpService: HttpService, public sanitizer: DomSanitizer, private router: Router) { }
 
@@ -62,11 +63,15 @@ export class CartComponent implements OnInit {
   }
   totalPrice() {
     this.total = 0;
+    this.totalQuantity = 0;
     // tslint:disable-next-line: prefer-for-of
     for (var i = 0; i < this.books.length; i++) {
       this.total += (this.books[i].price * this.books[i].bookQuantity);
+      this.totalQuantity +=  this.books[i].bookQuantity;
+      console.log("total quantity here", this.totalQuantity );
     }
     this.cartOrderSummaryService.getTotalPrice(this.total);
+    this.cartOrderSummaryService.getTotalQuantity(this.totalQuantity);
   }
 
   logincheck() {

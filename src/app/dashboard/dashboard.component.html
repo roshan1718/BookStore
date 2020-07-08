@@ -1,5 +1,5 @@
-<div class="dashboard-style">
-  <mat-toolbar class="toolbar-style">
+<div class="dashboard-style font">
+  <mat-toolbar class="toolbar-style font">
     <mat-toolbar-row>
       <mat-icon class="bs-icon-style">menu_book</mat-icon>
       <a routerLink="/" routerLinkActive="Active" class="bs-label">
@@ -15,11 +15,11 @@
       />
       <span class="cart-position"></span>
       <span class="bs-label">Cart</span>
-      <a routerLink="/cart">
-        <mat-icon
+      <a routerLink="/cart"> 
+        <mat-icon [@rotatedState]='state' (click)="rotate()"
           matBadge="{{ cartCount }}"
           matBadgeSize="small"
-          class="cart-icon-style"
+          class="cart-icon-style" 
         >
           shopping_cart</mat-icon
         >
@@ -27,7 +27,7 @@
       <span class="wish-space"></span>
       <span class="bs-label">WishList</span>
       <a routerLink="/wishlist">
-        <mat-icon
+        <mat-icon [@rotatedState]='stateup' (click)="rotateup()"
           matBadge="{{ wishCount }}"
           matBadgeSize="small"
           class="cart-icon-style"
