@@ -1,95 +1,85 @@
-.mat-card{
+.mat-card {
   width: 50%;
   margin-left: 10%;
-  border: rgb(184, 184, 184) 1px  solid; 
+  border: rgb(184, 184, 184) 1px solid;
+  box-shadow: 15px 15px 15px grey;
+
 }
-@media (max-width:768px){
-.mat-card{
-  width: 40%; 
-}}
-.card-img{
+@media (max-width: 768px) {
+  .mat-card {
+    width: 60%;
+    margin-top: 0%;
+    margin-left: 15%;
+  }
+}
+.card-img {
   margin-top: 2%;
   max-height: 130px;
 }
-@media (max-width:500px){
-  .card-img{
+@media (max-width: 500px) {
+  .card-img {
     margin-top: 0%;
     max-height: 130px;
-    margin-left: 10px;
+    margin-left: 25%;
   }
 }
-
-.card-data{
+.card-data {
   margin-top: -15%;
   margin-left: 20%;
 }
-@media  (max-width:768px){
-  .card-data{
+@media (max-width: 768px) {
+  .card-data {
     margin-top: 0%;
     margin-left: 0%;
     margin-left: 10px;
   }
 }
-.card-style{
-  font-size: 18px ;
+.card-style {
+  font-size: 18px;
 }
-
-.bs-msg{
-  font-size: 150% ;
+.bs-msg {
+  font-size: 150%;
   margin-left: 20%;
 }
-@media (max-width:500px){
-  .bs-msg{
-    font-size: 18px; 
+@media (max-width: 500px) {
+  .bs-msg {
+    font-size: 18px;
     margin-left: 0%;
   }
 }
-
-.rem-btn{
-  color: white;
-  background-color: rgb(170, 46, 46);
-}
-.addcard-btn{
+.addcard-btn {
   margin-left: 10%;
   color: white;
   background-color: rgb(45, 125, 206);
 }
-@media (max-width:500px){
-  .addcard-btn{
+@media (max-width: 500px) {
+  .addcard-btn {
     margin-left: 0%;
     margin-top: 5px;
   }
 }
-.btn-style{
+.btn-style {
   margin-left: 50%;
   margin-bottom: 5%;
 }
-@media (max-width:500px){
-  .btn-style{
-    margin-left: 0%;
+@media (max-width: 500px) {
+  .btn-style {
+    margin-left: 20%;
     width: 50%;
   }
 }
 .title-style {
   font-size: 90%;
-  white-space: nowrap; 
-  width: 180px; 
+  white-space: nowrap;
+  width: 180px;
   overflow: hidden;
-  text-overflow: ellipsis; 
-  }
-  @media (max-width:100px){
-    .title-style {
-      font-size: 10%;
-      width: 180px; 
-      overflow: hidden;
-      text-overflow: ellipsis; 
-      }
-  }
-.author-style {
-  font-size: 50%;
-  color: grey;
+  text-overflow: ellipsis;
 }
-.price-style {
-  font-size: 75%;
-  font-weight: bold;
+@media (max-width: 100px) {
+  .title-style {
+    font-size: 10%;
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

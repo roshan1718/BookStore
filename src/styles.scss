@@ -2,10 +2,29 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 .font{
   font: 15px Arial, sans-serif;
-  transition: none !important;
-  box-shadow: none !important;
+  // transition: none !important;
+  box-shadow: 15px 15px 15px grey;
 }
-
+.rem-btn{
+  color: white;
+  background-color: rgb(170, 46, 46);
+}
+.author-style {
+  font-size: 70%;
+  color: grey;
+}
+.price-style {
+  font-size: 75%;
+  font-weight: bold;
+}
+.addcard-btn{
+  margin-left: 10%;
+  color: white;
+  background-color: rgb(45, 125, 206);
+}
+.link-style {
+  color: brown;
+}
 //toolbar
 .dashboard-style {
   display: flex;
@@ -21,9 +40,13 @@
   }
 }
 .toolbar-style {
+  display: flex;
   background-color: rgb(141, 19, 19);
   color: white;
-  height: 20%;
+  height: 10%;
+  // top: 0;
+  // position: fixed;
+  
 }
 @media (max-width: 500px) {
   .toolbar-style {
@@ -51,7 +74,6 @@
     font-size: 90%;
   }
 }
-
 .mat-badge-content {
   background: white;
   color: black;
@@ -99,14 +121,19 @@
   background-color: rgb(59, 12, 12);
   color: white;
   height: 50px;
+  padding-left: 9%;
+  // position: fixed;
+  // bottom: 0;
 }
-.bs-footer-style {
-  margin-left: 9%;
-  padding-top: 1px;
-}
+
 //spinner
 .loading-sp {
   margin-left: 40%;
+}
+@media (max-width: 500px) {
+  .loading-sp {
+    margin-left: 20%;
+  }
 }
 @media (orientation: landscape) and (max-width: 100%) {
   .navbar-style {
@@ -116,9 +143,14 @@
     color: white;
   }
 }
+.top-pos{
+  margin-top: 3%;
+}
+.bottom-pos{
+  margin-bottom: 3%;
+}
 //selector
 .selector-style {
-  margin-top: 30px;
   margin-right: 3%;
   width: 13%;
 }
@@ -176,6 +208,4 @@
   margin-top: 45%;
   margin-left: -121%;
 }
-.link-style {
-  color: brown;
-}
+

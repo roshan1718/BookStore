@@ -4,7 +4,7 @@
   />
 </div>
 <div *ngIf="loading == false">
-  <mat-card class="mat-card font">
+  <mat-card class="mat-card font top-pos">
     <p class="card-style">My Cart ({{ books?.length }})</p>
     <div *ngIf="!books || books?.length === 0">
       <p class="bs-msg">Youre Cart is Empty...!!!</p>
@@ -20,7 +20,7 @@
           <span class="btn-icon">{{ cartBooks.bookQuantity }}</span>
           <span><button (click)="removeItem(cartBooks.id)">-</button></span>
           <button
-            class="rem-btn"
+            class="rem-card rem-btn"
             mat-button
             (click)="
               removeFromCart(cartBooks);

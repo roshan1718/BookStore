@@ -1,12 +1,14 @@
 .mat-card {
   width: 50%;
   margin-left: 10%;
-  margin-top: 2%;
+  box-shadow: 15px 15px 15px grey;
   border: rgb(184, 184, 184) 1px solid;
+
 }
 @media (max-width: 768px) {
   .mat-card {
-    width: 40%;
+    width: 60%;
+    margin-left: 15%;
   }
 }
 .card-img {
@@ -19,7 +21,7 @@
   .card-img {
     margin-top: 0%;
     max-height: 130px;
-    margin-left: 10px;
+    margin-left: 25%;
   }
 }
 .card-data {
@@ -59,46 +61,38 @@
     width: 100%;
   }
 }
-.author-style {
-  font-size: 50%;
-  color: grey;
-}
-.price-style {
-  font-size: 75%;
-  font-weight: bold;
-}
-.card-btn {
-  margin-left: 500px;
-  color: white;
-  background-color: rgb(45, 125, 206);
-}
-@media (max-width: 1024px) {
-  .card-btn {
-    margin-left: 0%;
-  }
-}
 
-.rem-btn {
-  margin-left: 55%;
+.rem-card {
+  margin-left: 69%;
   margin-bottom: 10px;
-  color: white;
-  background-color: rgb(170, 46, 46);
 }
 @media (max-width: 767px) {
   .rem-btn {
     margin-top: 10%;
-    margin-left: 0%;
+    margin-left: 5%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 777px) {
+  .rem-btn {
+    margin-left: 78%;
     margin-bottom: 10px;
   }
 }
 .card-btn {
-  margin-left: 70%;
+  
   color: white;
   background-color: rgb(45, 125, 206);
 }
 @media (max-width: 768px) {
   .card-btn {
-    margin-left: 0%;
+    margin-left: 15%;
+  }
+}
+@media (min-width: 769px) {
+  .card-btn {
+    margin-left: 75%;
   }
 }
 .btn-icon {
